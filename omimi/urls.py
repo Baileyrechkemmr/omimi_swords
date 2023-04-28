@@ -22,4 +22,5 @@ import projects.views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', projects.views.home, name='home'),
+    path('classes/', projects.views.classes, name='classes')
 ]
