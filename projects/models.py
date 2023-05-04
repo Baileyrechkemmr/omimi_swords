@@ -14,4 +14,9 @@ class Classes(models.Model):
     end_date = models.DateField()
 # ask dad about price and if yes add price felid
 
+class Sword_img(models.Model):
+    title = models.CharField(max_length=250)
+    image = models.ImageField(upload_to='images/')
+
+
 # at a later date have a felid possibly to use for the card for the travel and logins information 
