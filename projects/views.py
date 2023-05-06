@@ -4,7 +4,7 @@ from .models import Project, Classes, Sword_img
 def home(request):
     projects = Project.objects
     swords = Sword_img.objects
-    return render(request, 'projects/home.html', {'projects': projects}, {'swords': swords})
+    return render(request, 'projects/home.html', {'projects': projects, 'swords': swords})
 
 def about(request):
     return render(request, 'projects/about.html')
