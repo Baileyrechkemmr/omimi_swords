@@ -10,12 +10,12 @@ from .models import Sword_img
 
 @admin.register(Project)
 class ProjectAdmin(admin.ModelAdmin):
-    pass
+    list_display = ['title']
 
 @admin.register(Classes)
 class ClassesAdmin(admin.ModelAdmin):
-    pass
+    list_display = ['class_title']
 
 @admin.register(Sword_img)
 class Sword_imgAdmin(admin.ModelAdmin):
-    pass
+    list_display = ['title']
