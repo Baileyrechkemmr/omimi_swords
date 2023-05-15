@@ -1,6 +1,9 @@
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
 
+<!-- loads in the static collected from command python3 manage.py collectstatic-->
+{% load static %}
+
 <head>
     <script src="/docs/5.3/assets/js/color-modes.js"></script>
 
@@ -299,9 +302,24 @@
             </div><!-- /.row -->
 
 
+            <!-- card template for class data -->
+            
+            {% for project in classes.all %}
+
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">{{ classes.class_title }}</h5>
+                    <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+                    <p class="card-text">{{ classes.description }}</p>
+                    <a href="#" class="card-link">Card link</a>
+                </div>
+            </div>
+            
+            {% endfor %}
+            
             <!-- START THE FEATURETTES -->
 
-            <hr class="featurette-divider">
+            <!-- <hr class="featurette-divider">
 
             <div class="row featurette">
                 <div class="col-md-7">
@@ -362,7 +380,7 @@
                 </div>
             </div>
 
-            <hr class="featurette-divider">
+            <hr class="featurette-divider"> -->
 
             <!-- /END THE FEATURETTES -->
 
