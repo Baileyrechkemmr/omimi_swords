@@ -12,3 +12,11 @@ def about(request):
 def classes(request):
     classes = Classes.objects
     return render(request, 'projects/classes.html', {'classes': classes})
+
+
+def movie(request):
+    return render(request, 'projects/movie.html')
+
+
+def blog(request):
+    return render(request, 'projects/blog.html')
