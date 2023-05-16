@@ -15,7 +15,7 @@ class Classes(models.Model):
     class_title = models.CharField(max_length=250)
     start_date = models.DateField()
     end_date = models.DateField()
-    description = models.TextField()
+    description = models.TextField(default="null")
     
     def __str__(self):
         return self.class_title
