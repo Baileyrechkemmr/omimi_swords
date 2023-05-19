@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Project, Classes, Sword_img
+from .models import Project, Classes, Sword_img, Hotel
 # Create your views here.
 def home(request):
     projects = Project.objects
@@ -11,6 +11,7 @@ def about(request):
 
 def classes(request):
     classes = Classes.objects
+    hotel= Hotel.objects
     return render(request, 'projects/classes.html', {'classes': classes})
 
 

@@ -16,7 +16,7 @@ class Classes(models.Model):
     start_date = models.DateField()
     end_date = models.DateField()
     description = models.TextField(default="null")
-    
+
     def __str__(self):
         return self.class_title
 # ask dad about price and if yes add price felid
@@ -30,3 +30,17 @@ class Sword_img(models.Model):
 
 
 # at a later date have a felid possibly to use for the card for the travel and logins information 
+class Hotel(models.Model):
+    title = models.CharField(max_length=250)
+
+    def __str__(self):
+        return self.title
+
+# admin feild for blog posts
+
+
+class Blog(models.Model):
+    title = models.CharField(max_length=250)
+
+    def __str__(self):
+        return self.title
