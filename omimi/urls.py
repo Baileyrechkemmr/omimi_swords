@@ -26,4 +26,6 @@ urlpatterns = [
     path('classes/', projects.views.classes, name='classes'),
     path('blog/', projects.views.blog, name='blog'),
     path('movie/', projects.views.movie, name='movie'),
+    path('gallery/', projects.views.gallery, name='gallery'),
+    path('details_s/<int:sword_img.id>', projects.views.details_s, name='details_s'),
 ]

@@ -22,3 +22,13 @@ def movie(request):
 def blog(request):
     blog = Blog.objects
     return render(request, 'projects/blog.html', {'blog': blog})
+
+
+def gallery(request):
+    swords = Sword_img.objects
+    return render(request, 'projects/gallery.html', {'swords': swords})
+
+
+def details_s(request):
+    swords = Sword_img.objects
+    return render(request, 'projects/details_s.html', {'swords': swords})
