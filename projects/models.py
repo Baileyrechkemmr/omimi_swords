@@ -48,7 +48,7 @@ class Hotel(models.Model):
 
 class Blog(models.Model):
     title = models.CharField(max_length=250)
-    description = RichTextField()
+    description = RichTextField(default="")
 
 
 
