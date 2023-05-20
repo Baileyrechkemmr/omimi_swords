@@ -24,6 +24,7 @@ class Classes(models.Model):
 class Sword_img(models.Model):
     title = models.CharField(max_length=250)
     image = models.ImageField(upload_to='images/')
+    description = models.TextField(default="null")
     
     def __str__(self):
         return self.title
@@ -31,16 +32,22 @@ class Sword_img(models.Model):
 
 # at a later date have a felid possibly to use for the card for the travel and logins information 
 class Hotel(models.Model):
-    title = models.CharField(max_length=250)
+    city_name = models.CharField(max_length=100)
+    hotel_name = models.CharField(max_length=250)
+    address = models.CharField(max_length=100)
+    description = models.TextField(default="null")
+    distance = models.CharField(max_length=100)
+
 
     def __str__(self):
-        return self.title
+        return self.hotel_name
 
 # admin feild for blog posts
 
 
 class Blog(models.Model):
     title = models.CharField(max_length=250)
+
 
     def __str__(self):
         return self.title
