@@ -1,11 +1,6 @@
 from django.contrib import admin
-from .models import Project
-from .models import Classes
-from .models import Sword_img
-from .models import Hotel
-from .models import Blog
+from .models import Project, Classes, Sword_img, Hotel, Blog
 from django.utils.html import format_html
-
 # Register your models here.
 # for admin page
 
@@ -28,18 +23,20 @@ class ClassesAdmin(admin.ModelAdmin):
 
 @admin.register(Sword_img)
 class Sword_imgAdmin(admin.ModelAdmin):
-    def thumbnail(self, object):
-        return format_html('<img src="{}" width="40" />'.format(object.image.url ))
-    list_display = ['title', 'thumbnail']
+    list_display = ['title']
     search_fields = ['title']
     list_filter = ['title']
 
 
 @admin.register(Hotel)
 class HotelAdmin(admin.ModelAdmin):
-    list_display = ['title']
-    search_fields = ['title']
-    list_filter = ['title']
+    def thumbnail(self, object):
+        return format_html('<img src="{}" width="40" />'.format(object.image.url))
+
+    list_display = ['hotel_name', 'thumbnail']
+    search_fields = ['hotel_name']
+    list_filter = ['hotel_name']
+
 
 
 @admin.register(Blog)
