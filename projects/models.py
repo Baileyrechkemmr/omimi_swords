@@ -1,4 +1,5 @@
 from django.db import models
+from ckeditor.fields import RichTextField
 # Create your models here.
 #what u added at the admin page path
 
@@ -47,6 +48,7 @@ class Hotel(models.Model):
 
 class Blog(models.Model):
     title = models.CharField(max_length=250)
+    description = RichTextField()
 
 
 
