@@ -25,7 +25,7 @@ class Sword_img(models.Model):
     title = models.CharField(max_length=250)
     image = models.ImageField(upload_to='images/')
     description = models.TextField(default="null")
-    
+
     def __str__(self):
         return self.title
 
@@ -47,6 +47,7 @@ class Hotel(models.Model):
 
 class Blog(models.Model):
     title = models.CharField(max_length=250)
+
 
 
     def __str__(self):

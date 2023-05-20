@@ -4,6 +4,7 @@ from .models import Classes
 from .models import Sword_img
 from .models import Hotel
 from .models import Blog
+from django.utils.html import format_html
 
 # Register your models here.
 # for admin page
@@ -27,7 +28,9 @@ class ClassesAdmin(admin.ModelAdmin):
 
 @admin.register(Sword_img)
 class Sword_imgAdmin(admin.ModelAdmin):
-    list_display = ['title']
+    def thumbnail(self, object):
+        return format_html('<img src="{}" width="40" />'.format(object.image.url ))
+    list_display = ['title', 'thumbnail']
     search_fields = ['title']
     list_filter = ['title']
 
