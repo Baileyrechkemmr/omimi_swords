@@ -33,7 +33,7 @@ class HotelAdmin(admin.ModelAdmin):
     def thumbnail(self, object):
         return format_html('<img src="{}" width="40" />'.format(object.image.url))
 
-    list_display = ['hotel_name', 'thumbnail']
+    list_display = ['hotel_name', 'thumbnail', 'phone']
     search_fields = ['hotel_name']
     list_filter = ['hotel_name']
 
