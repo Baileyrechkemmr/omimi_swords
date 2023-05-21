@@ -23,17 +23,17 @@ class ClassesAdmin(admin.ModelAdmin):
 
 @admin.register(Sword_img)
 class Sword_imgAdmin(admin.ModelAdmin):
-    list_display = ['title']
+    def thumbnail(self, object):
+        return format_html('<img src="{}" width="40" />'.format(object.image.url))
+    
+    list_display = ['title', 'thumbnail']
     search_fields = ['title']
     list_filter = ['title']
 
 
 @admin.register(Hotel)
 class HotelAdmin(admin.ModelAdmin):
-    def thumbnail(self, object):
-        return format_html('<img src="{}" width="40" />'.format(object.image.url))
-
-    list_display = ['hotel_name', 'thumbnail', 'phone']
+    list_display = ['hotel_name', 'phone']
     search_fields = ['hotel_name']
     list_filter = ['hotel_name']
 
