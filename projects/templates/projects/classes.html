@@ -309,7 +309,7 @@
             </div><!-- /.row -->
 
             <div class="classes_date">
-                <h5>{{ classes.class_year }}</h5>
+                <h5>{{ year.class_year }}</h5>
             </div>
 
             <!-- card template for class data -->
@@ -328,8 +328,25 @@
                 {% endfor %}
             </div>
             <!-- START THE FEATURETTES -->
-
+            <!-- template for hotel cards -->
+            <div class="card_container">
+                {% for hotel in hotel.all %}
             
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ hotel.hotel_name }}</h5>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">{{ hotel.city_name }}</h6>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">{{ hotel.address }}</h6>
+                        <p class="card-text">{{ hotel.description }}</p>
+                        <p class="card-text">{{ hotel.distance }}</p>
+                        <p class="card-text">{{ hotel.phone }}</p>
+                        <a href="#" class="card-link">Card link</a>
+                    </div>
+                </div>
+            
+                {% endfor %}
+            </div>
+
 
             <!-- /END THE FEATURETTES -->
 
