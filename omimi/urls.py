@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
 import projects
 import projects.views
 
@@ -28,4 +30,4 @@ urlpatterns = [
     path('movie/', projects.views.movie, name='movie'),
     path('gallery/', projects.views.gallery, name='gallery'),
     path('details_s/<int:sword_img_id>', projects.views.details_s, name='details_s'),
-]
+] + static (settings.STATIC_URL, document_root=settings.STATIC_ROOT)

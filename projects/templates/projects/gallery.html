@@ -300,12 +300,12 @@
 
 
             <!-- START THE FEATURETTES -->
-            {% for sword_img in sword_img.all %}
+            {% for sword_img in swords.all %}
             <div class="card" style="width: 18rem;">
-                <img src="{{ sword_img.image }}" class="card-img-top" alt="{{ sword_img.image }}">
+                <img src="{{ swords.image.url }}" class="card-img-top" alt="{{ swords.image }}">
                 <div class="card-body">
-                    <h5 class="card-title">{{ sword_img.title }}</h5>
-                    <a href="{% url 'details_s' %}" class="btn btn-primary">Learn more</a>
+                    <h5 class="card-title">{{ swords.title }}</h5>
+                    <a href="#" class="btn btn-primary">Learn more</a>
                 </div>
             </div>
             {% endfor %}
