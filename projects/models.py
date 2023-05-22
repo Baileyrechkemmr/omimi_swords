@@ -3,10 +3,9 @@ from ckeditor.fields import RichTextField
 # Create your models here.
 #what u added at the admin page path
 
-class Project(models.Model):
-    title = models.CharField(max_length=250)
-    project_image = models.ImageField(upload_to='images/')
-    description = models.TextField()
+class Year(models.Model):
+    class_year = models.IntegerField()
+    
     
     def __str__(self):
         return self.title
@@ -16,6 +15,7 @@ class Classes(models.Model):
     start_date = models.DateField()
     end_date = models.DateField()
     description = models.TextField(default="null")
+    class_slots = models.IntegerField(max_length=4)
 
     def __str__(self):
         return self.class_title

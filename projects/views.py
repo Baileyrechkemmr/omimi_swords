@@ -1,18 +1,19 @@
 from django.shortcuts import render
-from .models import Project, Classes, Sword_img, Hotel, Blog
+from .models import Year, Classes, Sword_img, Hotel, Blog
 # Create your views here.
 def home(request):
-    projects = Project.objects
+    year = Year.objects
     swords = Sword_img.objects
-    return render(request, 'projects/home.html', {'projects': projects, 'swords': swords})
+    return render(request, 'projects/home.html', {'year': year, 'swords': swords})
 
 def about(request):
     return render(request, 'projects/about.html')
 
 def classes(request):
+    year = Year.objects
     classes = Classes.objects
     hotel= Hotel.objects
-    return render(request, 'projects/classes.html', {'classes': classes, 'hotel': hotel})
+    return render(request, 'projects/classes.html', {'classes': classes, 'hotel': hotel, 'year': year})
 
 
 def movie(request):

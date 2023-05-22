@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Project, Classes, Sword_img, Hotel, Blog
+from .models import Year, Classes, Sword_img, Hotel, Blog
 from django.utils.html import format_html
 # Register your models here.
 # for admin page
@@ -7,11 +7,11 @@ from django.utils.html import format_html
 # samm as in modles.py for name and what not
 
 
-@admin.register(Project)
-class ProjectAdmin(admin.ModelAdmin):
-    list_display = ['title']
-    search_fields = ['title', 'description']
-    list_filter = ['title']
+@admin.register(Year)
+class YearAdmin(admin.ModelAdmin):
+    list_display = ['year']
+    search_fields = ['year']
+    list_filter = ['year']
 
 
 @admin.register(Classes)  # can also add a date time filter
