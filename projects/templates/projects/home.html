@@ -174,19 +174,24 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <ul class="navbar-nav me-auto mb-2 mb-md-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
+                            <a class="nav-link active" aria-current="page" href="{% url 'classes' %}">Classes</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link disabled">Disabled</a>
+                            <a class="nav-link active" aria-current="page" href="{% url 'blog' %}">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{% url 'about' %}">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{% url 'movie' %}">L6 bainite movie</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{% url 'gallery' %}">Gallery</a>
                         </li>
                     </ul>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form>
                 </div>
             </div>
         </nav>
@@ -268,21 +273,18 @@
                         <title>Placeholder</title>
                         <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
                     </svg>
-                    <h2 class="fw-normal">Heading</h2>
-                    <p>Some representative placeholder content for the three columns of text below the carousel. This is
-                        the first column.</p>
-                    <p><a class="btn btn-secondary" href="{% url 'classes' %}">Classes &raquo;</a></p>
+                    <h2 class="fw-normal">Classes at Morgan Valley forge</h2>
+                    <p>Come make your own knife and learn how to forge a blade!</p>
+                    <p><a class="btn btn-secondary" href="{% url 'classes' %}">go to classes &raquo;</a></p>
                 </div><!-- /.col-lg-4 -->
                 <div class="col-lg-4">
                     <svg class="bd-placeholder-img rounded-circle" width="140" height="140"
                         xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder"
                         preserveAspectRatio="xMidYMid slice" focusable="false">
-                        <title>Placeholder</title>
                         <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
                     </svg>
-                    <h2 class="fw-normal">Heading</h2>
-                    <p>Another exciting bit of representative placeholder content. This time, we've moved on to the
-                        second column.</p>
+                    <h2 class="fw-normal">Blog</h2>
+                    <p>come this way for some fun stories with Howerd on his blog.</p>
                     <p><a class="btn btn-secondary" href="{% url 'blog' %}">blog &raquo;</a></p>
                 </div><!-- /.col-lg-4 -->
                 <div class="col-lg-4">
@@ -292,8 +294,8 @@
                         <title>Placeholder</title>
                         <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
                     </svg>
-                    <h2 class="fw-normal">Heading</h2>
-                    <p>And lastly this, the third column of representative placeholder content.</p>
+                    <h2 class="fw-normal">about</h2>
+                    <p>.</p>
                     <p><a class="btn btn-secondary" href="{% url 'about' %}">About &raquo;</a></p>
                 </div><!-- /.col-lg-4 -->
             </div><!-- /.row -->
@@ -305,19 +307,17 @@
 
             <div class="row featurette">
                 <div class="col-md-7">
-                    <h2 class="featurette-heading fw-normal lh-1">First featurette heading. <span
+                    <h2 class="featurette-heading fw-normal lh-1">Classes at Morgan Valley Forge. <span
                             class="text-body-secondary">It’ll blow your mind.</span></h2>
-                    <p class="lead">Some great placeholder content for the first featurette here. Imagine some exciting
-                        prose here.</p>
+                    <p class="lead">Have you ever wanted to learn the art of metallurgy? Here at Morgan Valley Forge Howard clark, Master black smith as well as the creator of the L6 bainite katana, offers classes on the ways of forging.Come look at the classes and see if spots are still available!</p>
                 </div>
+                
                 <div class="col-md-5">
-                    <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
-                        height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500"
-                        preserveAspectRatio="xMidYMid slice" focusable="false">
-                        <title>Placeholder</title>
-                        <rect width="100%" height="100%" fill="var(--bs-secondary-bg)" /><text x="50%" y="50%"
-                            fill="var(--bs-secondary-color)" dy=".3em">500x500</text>
-                    </svg>
+                    <div class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="400"
+                        xmlns="{% static 'howard1.jpeg' %}" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice"
+                        focusable="false">
+                        <img src="{% static 'howard1.jpeg' %}" rect width="100%" height="450" />
+                    </div>
                 </div>
             </div>
 
@@ -335,8 +335,7 @@
                         height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500"
                         preserveAspectRatio="xMidYMid slice" focusable="false">
                         <title>Placeholder</title>
-                        <rect width="100%" height="100%" fill="var(--bs-secondary-bg)" /><text x="50%" y="50%"
-                            fill="var(--bs-secondary-color)" dy=".3em">500x500</text>
+                       
                     </svg>
                 </div>
             </div>
@@ -352,13 +351,12 @@
                         look like with some actual content. Your content.</p>
                 </div>
                 <div class="col-md-5">
-                    <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
-                        height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500"
+                    <div class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
+                        height="500" xmlns="" aria-label="Placeholder: 500x500"
                         preserveAspectRatio="xMidYMid slice" focusable="false">
                         <title>Placeholder</title>
-                        <rect width="100%" height="100%" fill="var(--bs-secondary-bg)" /><text x="50%" y="50%"
-                            fill="var(--bs-secondary-color)" dy=".3em">500x500</text>
-                    </svg>
+                        <img src="{% static '' %}" rect width="100%" height="100%" fill="var(--bs-secondary-bg)" />
+                    </div>
                 </div>
             </div>
 
