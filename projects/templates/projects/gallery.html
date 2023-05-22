@@ -87,6 +87,18 @@
         .bd-mode-toggle {
             z-index: 1500;
         }
+
+        .card_container{
+            display: flex;
+            flex-direction: row;
+            gap: 7px;
+            flex-wrap: wrap;
+        }
+        .card-img-top{
+            height: 300px;
+            
+        }
+
     </style>
 
 
@@ -303,16 +315,19 @@
 
 
             <!-- START THE FEATURETTES -->
-            {% for sword_img in swords.all %}
-            <div class="card" style="width: 18rem;">
-                <img src="{{ sword_img.image.url }}" class="card-img-top" alt="{{ swords.image }}">
-                <div class="card-body">
-                    <h5 class="card-title">{{ swords.title }}</h5>
-                    <a href="#" class="btn btn-primary">Learn more</a>
+            <div class="card_container">
+                {% for sword_img in swords.all %}
+                <div class="card" style="width: 18rem;">
+                    <img src="{{ sword_img.image.url }}" class="card-img-top" alt="{{ swords.image }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ sword_img.title }}</h5>
+                        <a href="#" class="btn btn-primary">Learn more</a>
+                    </div>
                 </div>
+                {% endfor %}
             </div>
-            {% endfor %}
             <!-- /END THE FEATURETTES -->
+       
 
         </div><!-- /.container -->
 
