@@ -9,9 +9,9 @@ from django.utils.html import format_html
 
 @admin.register(Year)
 class YearAdmin(admin.ModelAdmin):
-    list_display = ['year']
-    search_fields = ['year']
-    list_filter = ['year']
+    list_display = ['class_year']
+    search_fields = ['class_year']
+    list_filter = ['class_year']
 
 
 @admin.register(Classes)  # can also add a date time filter
