@@ -6,7 +6,6 @@ from ckeditor.fields import RichTextField
 class Year(models.Model):
     class_year = models.IntegerField()
     
-    
     def __str__(self):
         return self.title
 
@@ -39,7 +38,6 @@ class Hotel(models.Model):
     distance = models.CharField(max_length=100)
     phone = models.CharField(max_length=100, default=515-555-5555)
 
-
     def __str__(self):
         return self.hotel_name
 
@@ -49,8 +47,6 @@ class Hotel(models.Model):
 class Blog(models.Model):
     title = models.CharField(max_length=250)
     description = RichTextField(default="")
-
-
 
     def __str__(self):
         return self.title
