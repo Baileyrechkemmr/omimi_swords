@@ -33,3 +33,7 @@ def gallery(request):
 def details_s(request):
     swords = Sword_img.objects.all()
     return render(request, 'projects/details_s.html', {'swords': swords})
+
+
+def order_form(request):
+    return render(request, 'projects/order_form.html')

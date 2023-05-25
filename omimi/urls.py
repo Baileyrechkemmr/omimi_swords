@@ -30,6 +30,7 @@ urlpatterns = [
     path('movie/', projects.views.movie, name='movie'),
     path('gallery/', projects.views.gallery, name='gallery'),
     path('details_s/<int:sword_img_id>', projects.views.details_s, name='details_s'),
+    path('order_form/', projects.views.order_form, name='order_form'),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
