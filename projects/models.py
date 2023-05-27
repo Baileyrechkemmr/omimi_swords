@@ -51,7 +51,7 @@ class Blog(models.Model):
 
     @property
     def stripped_rich_field(self):
-        return strip_tags(self.rich_field)
+        return strip_tags(self.description)
     
     def __str__(self):
         return self.title
