@@ -1,11 +1,12 @@
 from django.db import models
 from ckeditor.fields import RichTextField
+from django.utils.html import strip_tags
 # Create your models here.
 #what u added at the admin page path
 
 class Year(models.Model):
     class_year = models.IntegerField()
-    
+
     def __str__(self):
         return self.title
 
@@ -48,5 +49,9 @@ class Blog(models.Model):
     title = models.CharField(max_length=250)
     description = RichTextField(default="")
 
+    @property
+    def stripped_rich_field(self):
+        return strip_tags(self.rich_field)
+    
     def __str__(self):
         return self.title

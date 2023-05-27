@@ -89,6 +89,10 @@
         .bd-mode-toggle {
             z-index: 1500;
         }
+
+        .container_blog{
+            border: #712cf9 solid 4px;
+        }
     </style>
 
 
@@ -307,10 +311,10 @@
 
             <!-- START THE FEATURETTES -->
 
-            <div class="container">
+            <div class="container_blog">
                 {% for blog in blog.all %}
                 <div class="blog posts">
-                    <p> {{ blog.description }}</p>
+                    {{ blog.description }}
 
                 </div>
                 {% endfor %}
