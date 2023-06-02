@@ -277,12 +277,11 @@
         <!-- Wrap the rest of the page in another container to center all the content. -->
 
         <div class="container marketing">
-
             
-
-            <div class="classes_date">
-                <h5>{{ year.class_year }}</h5>
-            </div>
+            {% for year in year.all %}
+                <h5>classes for {{ year.class_year }}</h5>
+            {% endfor %}
+            
 
             <!-- card template for class data -->
             <div class="card_container">

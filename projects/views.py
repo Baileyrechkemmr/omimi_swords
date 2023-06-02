@@ -2,9 +2,8 @@ from django.shortcuts import render, get_object_or_404
 from .models import Year, Classes, Sword_img, Hotel, Blog
 # Create your views here.
 def home(request):
-    year = Year.objects
     swords = Sword_img.objects
-    return render(request, 'projects/home.html', {'year': year, 'swords': swords})
+    return render(request, 'projects/home.html', {'swords': swords})
 
 def about(request):
     return render(request, 'projects/about.html')
