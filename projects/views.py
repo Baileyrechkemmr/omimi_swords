@@ -39,6 +39,6 @@ def order_form(request):
     return render(request, 'projects/order_form.html')
 
 
-def details_h(request):
-    hotel = Hotel.objects.all()
-    return render(request, 'projects/details_h.html', {'hotel': hotel})
+def details_h(request, hotel_id):
+    hotel_details = get_object_or_404(Hotel, pk=hotel_id)
+    return render(request, 'projects/details_h.html', {'hotel': hotel_details})
