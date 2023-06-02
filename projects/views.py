@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Year, Classes, Sword_img, Hotel, Blog
 # Create your views here.
 def home(request):
@@ -30,10 +30,15 @@ def gallery(request):
     return render(request, 'projects/gallery.html', {'swords': swords})
 
 
-def details_s(request):
-    swords = Sword_img.objects.all()
-    return render(request, 'projects/details_s.html', {'swords': swords})
+def details_s(request, sword_img_id):
+    sword_detail = get_object_or_404(Sword_img, pk=sword_img_id)
+    return render(request, 'projects/details_s.html', {'sword': sword_detail})
 
 
 def order_form(request):
     return render(request, 'projects/order_form.html')
+
+
+def details_h(request):
+    hotel = Hotel.objects.all()
+    return render(request, 'projects/details_h.html', {'hotel': hotel})
