@@ -5,6 +5,7 @@ from django.utils.html import strip_tags
 #what u added at the admin page path
 
 class Year(models.Model):
+    title = models.CharField(default="year", max_length=4)
     class_year = models.IntegerField()
 
     def __str__(self):
