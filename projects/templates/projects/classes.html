@@ -100,7 +100,30 @@
             background-color: rgb(107, 109, 109);
             
         }
+        .table {
+            display: flex;
+            flex-direction: column;
 
+        }
+        .container_marketing{
+            border: #5a23c8 solid 4px;
+            display: flex;
+            padding-bottom: 5%;
+            gap: 15%;
+        }
+        .card_container {
+            display: flex;
+            flex-direction: column;
+        }
+        .card_container2 {
+            display: flex;
+            flex-direction: row;
+            gap: 2%;
+        }
+
+        .classes_form {
+            border: #5a23c8 solid 4px;
+        }
 
 
     </style>
@@ -283,54 +306,62 @@
   ================================================== -->
         <!-- Wrap the rest of the page in another container to center all the content. -->
 
-        <div class="container marketing">
+        <div class="container_marketing">
             
-            {% for year in year.all %}
-                <h5>classes for {{ year.class_year }}</h5>
-            {% endfor %}
+            
             
 
             <!-- card template for class data -->
             <div class="card_container">
-                {% for classes in classes.all %}
+                {% for year in year.all %}
+                <h5>classes for {{ year.class_year }}</h5>
+                {% endfor %}
 
-                <div class="card" style="width: 18rem;">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ classes.class_title }}</h5>
-                        <h6 class="card-subtitle mb-2 text-body-secondary">{{ classes.start_date }} - {{ classes.end_date }}</h6>
-                        <p class="card-text">{{ classes.description }}</p>
-                        <a href="#" class="card-link">Card link</a>
+                <div class="card_container2">
+                    {% for classes in classes.all %}
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ classes.class_title }}</h5>
+                            <h6 class="card-subtitle mb-2 text-body-secondary">{{ classes.start_date }} - {{ classes.end_date }}</h6>
+                            <p class="card-text">{{ classes.description }}</p>
+                            <a href="#" class="card-link">Card link</a>
+                        </div>
                     </div>
+                    
+                    {% endfor %}
                 </div>
                 
-                {% endfor %}
+
+                
+
             </div>
+            
+            <div class="table" style="width: 18rem;">
+                hotel
+                    <table class="table table-striped">
+                        <tbody>
+                            {% for hotel in hotel.all %}
+                            <tr> 
+                                <th scope="col"></th>    
+                                <td><a href="{% url 'details_h' hotel.id %}" class="hotel-link">{{ hotel.hotel_name }}</a></td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+        </div><!-- /.container -->
             <!-- START THE FEATURETTES -->
             <!-- template for hotel cards -->
             <hr class="featurette-divider">
             <!-- might make a details page for the hotels to save on space -->
             <!-- cards template -->
-            <div class="card_container">
-                {% for hotel in hotel.all %}
-            
-                <div class="table" style="width: 18rem;">
-                    <table class="table table-striped">
-                        <tbody>
-                            <tr>
-                                <th scope="row"></th>
-                                <td><a href="{% url 'details_h' hotel.id %}" class="hotel-link">{{ hotel.hotel_name }}</a></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div> 
-            
-                {% endfor %}
-            </div>
+        <div class="classes_form">
 
 
+        </div>
             <!-- table template for the hotels page so the names are shown but you can click onm it for more info about the hotel or maybe it expands -->
 
-        </div><!-- /.container -->
+        
 
 
         <!-- FOOTER -->
