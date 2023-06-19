@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Year, Classes, Sword_img, Hotel, Blog
+from .models import Year, Classes, Sword_img, Hotel, Blog, Sword_sales,
 # Create your views here.
 def home(request):
     swords = Sword_img.objects
@@ -41,3 +41,8 @@ def order_form(request):
 def details_h(request, hotel_id):
     hotel_details = get_object_or_404(Hotel, pk=hotel_id)
     return render(request, 'projects/details_h.html', {'hotel': hotel_details})
+
+
+def sales(request):
+    sword_sales = Sword_sales.objects
+    return render(request, 'projects/sales.html', {'sword_sales': sword_sales})

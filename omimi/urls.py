@@ -32,6 +32,7 @@ urlpatterns = [
     path('details_s/<int:sword_img_id>',projects.views.details_s, name='details_s'),
     path('order_form/', projects.views.order_form, name='order_form'),
     path('details_h/<int:hotel_id>', projects.views.details_h, name='details_h'),
+    path('sales/', projects.views.sales, name='sales'),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
