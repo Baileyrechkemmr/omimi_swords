@@ -123,10 +123,18 @@
 
         .classes_form {
             border: #5a23c8 solid 4px;
+            display: flex;
+            flex-direction: column;
         }
 
         .table {
             width: 15%;
+        }
+
+        .classes_order{
+            border: red solid 4px;
+            text-align: center;
+            height: 150px;
         }
 
 
@@ -356,37 +364,40 @@
             <!-- might make a details page for the hotels to save on space -->
             <!-- cards template -->
         <div class="classes_form">
-
+            <div class="classes_order">
+                <form action="mailto:rechkemmer3@gamil.com">
+                    Classes singe up form
+                    Class you want to take:<input type="text" name="class name"> <br /><br />
+                    Your name:<input type="text" name="user first and last name" placeholder="John Smith"><br/><br />
+                    <input type="submit" value="Send">
+                </form>
+            </div>
+            <p>
+                Each of these classes will include one day of forging blade(s), grinding, heat treating, and assembling a basic forged
+                carbon steel knife. All classes are limited to four participants
+                <br />
+                <br />
+                $775 for the week. $700 tuition, plus $75 materials fee
+                <br />
+                <br />
+                To secure your spot in any of these classes, Eamil to howard@mvforge.com, and send a $200 deposit to howard@mvforge.com
+                via PayPal, making sure to mention which class.
+                <br />
+                <br />
+                Or mail a check to Howard Clark
+                <br />
+                115 35th Place
+                <br />
+                Runnells, IA 50237
+                <br />
+                Balance due two weeks prior to class start date
+            </p>
 
         </div>
             <!-- table template for the hotels page so the names are shown but you can click onm it for more info about the hotel or maybe it expands -->
             <!-- howard@mvforge.com -->
-        <form action="mailto:rechkemmer3@gamil.com">
-            Classes singe up form
-            Class you want to take:<input type="text" name="class name">
-            Your name:<input type="text" name="user first and last name" placeholder="John Smith">
-            <input type="submit" value="Send">
-            <p>Each of these classes will include one day of forging blade(s), grinding, heat treating, and assembling a basic forged
-            carbon steel knife. All classes are limited to four participants
-            <br />
-            <br />
-            $775 for the week. $700 tuition, plus $75 materials fee
-            <br />
-            <br />
-            To secure your spot in any of these classes, Eamil to howard@mvforge.com, and send a $200 deposit to howard@mvforge.com
-            via PayPal, making sure to mention which class.
-            <br />
-            <br />
-            Or mail a check to Howard Clark
             
-            115 35th Place
-            
-            Runnells, IA 50237
-            
-            
-            
-            Balance due two weeks prior to class start date</p>
-        </form>
+        
 
 
         <!-- FOOTER -->
