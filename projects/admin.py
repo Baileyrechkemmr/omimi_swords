@@ -44,3 +44,4 @@ class BlogAdmin(admin.ModelAdmin):
     list_display = ['title']
     search_fields = ['title']
     list_filter = ['title']
+

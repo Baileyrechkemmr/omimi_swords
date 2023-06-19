@@ -43,8 +43,17 @@ class Hotel(models.Model):
     def __str__(self):
         return self.hotel_name
 
-# admin feild for blog posts
 
+class Sword_sales(models.Model):
+    title = models.CharField(max_length=250)
+    image = models.ImageField(upload_to='images/')
+    description = models.TextField(default="null")
+    price = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.title
+
+# admin feild for blog posts
 
 class Blog(models.Model):
     title = models.CharField(max_length=250)
