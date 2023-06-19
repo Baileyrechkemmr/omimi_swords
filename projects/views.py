@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Year, Classes, Sword_img, Hotel, Blog, Sword_sales,
+from .models import Year, Classes, Sword_img, Hotel, Blog, Sword_sales
 # Create your views here.
 def home(request):
     swords = Sword_img.objects
@@ -46,3 +46,8 @@ def details_h(request, hotel_id):
 def sales(request):
     sword_sales = Sword_sales.objects
     return render(request, 'projects/sales.html', {'sword_sales': sword_sales})
+
+
+def details_sales(request, sword_sales_id):
+    sword_sales_detail = get_object_or_404(Sword_sales, pk=sword_sales_id)
+    return render(request, 'projects/details_sales.html', {'sword_sales_detailes': sword_sales_detail})
