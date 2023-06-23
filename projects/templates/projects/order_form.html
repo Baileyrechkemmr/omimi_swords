@@ -86,6 +86,34 @@
         .bd-mode-toggle {
             z-index: 1500;
         }
+
+        .order-form1{
+            display: flex;
+            flex-direction: row;
+        }
+        .order-form2{
+            border: #10a725 4px solid;
+            width: fit-content;
+            margin-left: 4px;
+        }
+        textarea{
+            width: 400px;
+            height: 160px;
+            margin-left: 2%;
+            
+        }
+        .container_marketing{
+            border: red 4px solid;
+            padding-left: 170px;
+            padding-right: 170px;
+        }
+
+        #submit_button{
+            margin-left: 43%;
+        }
+        .order-form-rules{
+            border: #712cf9 solid 2px;
+        }
     </style>
 
 
@@ -266,27 +294,36 @@
   ================================================== -->
         <!-- Wrap the rest of the page in another container to center all the content. -->
 
-        <div class="container marketing">
+        <div class="container_marketing">
 
             <!-- Three columns of text below the carousel -->
             <!-- add form for everything in the order formm from mold sight -->
 
             <!-- START THE FEATURETTES -->
-            <div class="order-form">
-                <form action="mailto:rechkemmer3@gamil.com">
-                    Your name:<input type="text" name="user first and last name" placeholder="John Smith"><br /><br />
-                    your email:<input type="text" name="address" placeholder="myemail@email.com"> <br /><br />
-                    Address 1:<input type="text" name="address 1" placeholder="234 wallaby way"> <br /><br />
-                    address 2:<input type="text" name="address 2" placeholder="building 5, apt 5"> <br /><br />
-                    City:<input type="text" name="city" placeholder="Des Moines"> <br /><br />
-                    State/ Province:<input type="text" name="State/ Province" placeholder="Iowa"> <br /><br/>
-                    Zip Code:<input type="text" name="zip_code" placeholder="50317"> <br /><br/>
-                    Country:<input type="text" name="country" placeholder="United stat3es"> <br /><br/>
-                    your phone number:<input type="text" name="address" placeholder="555-555-5555"> <br /><br />
-                    L6:<input type="checkbox" name="l6"> <br/><br/>
-                    1086:<input type="checkbox" name="1086"> <br /><br />
-                    <input type="submit" value="Send">
-                </form>
+            <div class="order-form1">
+                <div class="oerder-form2">
+                    <form class="order" action="mailto:rechkemmer3@gamil.com">
+                        Your name:<input type="text" name="user name" placeholder="John Smith"><br /><br />
+                        your email:<input type="text" name="email" placeholder="myemail@email.com"> <br /><br />
+                        Address 1:<input type="text" name="address 1" placeholder="234 wallaby way"> <br /><br />
+                        address 2:<input type="text" name="address 2" placeholder="building 5, apt 5"> <br /><br />
+                        City:<input type="text" name="city" placeholder="Des Moines"> <br /><br />
+                        State/ Province:<input type="text" name="State/ Province" placeholder="Iowa"> <br /><br/>
+                        Zip Code:<input type="text" name="zip_code" placeholder="50317"> <br /><br/>
+                        Country:<input type="text" name="country" placeholder="United stat3es"> <br /><br/>
+                        your phone number:<input type="text" name="address" placeholder="555-555-5555"> <br /><br />
+                        L6:<input type="checkbox" name="l6"> <br/><br/>
+                        1086:<input type="checkbox" name="1086"> <br /><br />
+                        Length of Blade:<input type="text" name="Length of Blade"> <br /><br />
+                        Depth of Sori:<input type="text" name="Depth of Sori"> <br /><br />
+                        other specifications:<br/>
+                        <textarea row="row" cols="cols" name="other specifications"> </textarea> <br /><br />
+                        <input id="submit_button" type="submit" value="Send">
+                    </form>
+                </div>
+                <div class="order-form-rules">
+
+                </div>
             </div>
 
 
