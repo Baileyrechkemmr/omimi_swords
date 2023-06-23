@@ -92,7 +92,8 @@
 
         .card_container{
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
+            overflow-x: scroll;
             gap: 5px;
         }
 
@@ -100,24 +101,19 @@
             background-color: rgb(107, 109, 109);
             
         }
-        .table {
-            display: flex;
-            flex-direction: column;
-
-        }
         .container_marketing{
             border: #5a23c8 solid 4px;
             display: flex;
-            padding-bottom: 1%;
-            gap: 20%;
+            flex-wrap: wrap;
+            height: 250px;
+            gap: 14%;
         }
-        .card_container {
-            display: flex;
-            flex-direction: column;
-        }
+        
         .card_container2 {
             display: flex;
             flex-direction: row;
+            
+
             gap: 2%;
         }
 
@@ -127,12 +123,19 @@
             flex-direction: column;
         }
 
+        .card-body{
+            height: 150px;
+        }
+
         .table {
+            display: flex;
+            flex-direction: column;
             margin-top: 2px;
             border: red solid 4px;
-            width: 15%;
+            width:20%;
             max-height: 100%;
-            flex-wrap: scroll;
+            
+            overflow-y: scroll;
         }
         /* use margin for class card div and not padding */
 
@@ -345,7 +348,6 @@
                             <h5 class="card-title">{{ classes.class_title }}</h5>
                             <h6 class="card-subtitle mb-2 text-body-secondary">{{ classes.start_date }} - {{ classes.end_date }}</h6>
                             <p class="card-text">{{ classes.description }}</p>
-                            <a href="#" class="card-link">Card link</a>
                         </div>
                     </div>
                     
