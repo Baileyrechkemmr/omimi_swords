@@ -45,7 +45,7 @@ class Hotel(models.Model):
 
 
 class Sword_sales(models.Model):
-    title = models.CharField(max_length=250)
+    title = models.IntegerField()
     image = models.ImageField(upload_to='images/')
     description = models.TextField(default="null")
     price = models.CharField(max_length=50)
