@@ -116,6 +116,13 @@
             border: #712cf9 solid 2px;
             margin-bottom: 100px;
         }
+        body {
+            background-color: rgb(107, 109, 109);
+        }
+        
+        .order-form1 {
+            border:#5a23c8 solid 4px;
+        }
     </style>
 
 
@@ -144,59 +151,13 @@
         </symbol>
     </svg>
 
-    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
-        <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button"
-            aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
-            <svg class="bi my-1 theme-icon-active" width="1em" height="1em">
-                <use href="#circle-half"></use>
-            </svg>
-            <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
-        </button>
-        <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
-            <li>
-                <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light"
-                    aria-pressed="false">
-                    <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em">
-                        <use href="#sun-fill"></use>
-                    </svg>
-                    Light
-                    <svg class="bi ms-auto d-none" width="1em" height="1em">
-                        <use href="#check2"></use>
-                    </svg>
-                </button>
-            </li>
-            <li>
-                <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark"
-                    aria-pressed="false">
-                    <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em">
-                        <use href="#moon-stars-fill"></use>
-                    </svg>
-                    Dark
-                    <svg class="bi ms-auto d-none" width="1em" height="1em">
-                        <use href="#check2"></use>
-                    </svg>
-                </button>
-            </li>
-            <li>
-                <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto"
-                    aria-pressed="true">
-                    <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em">
-                        <use href="#circle-half"></use>
-                    </svg>
-                    Auto
-                    <svg class="bi ms-auto d-none" width="1em" height="1em">
-                        <use href="#check2"></use>
-                    </svg>
-                </button>
-            </li>
-        </ul>
-    </div>
+
 
 
     <header data-bs-theme="dark">
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Carousel</a>
+                <a class="navbar-brand" href="#"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                     aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -221,11 +182,11 @@
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="{% url 'gallery' %}">Gallery</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{% url 'order_form' %}">Order a sword
+                                from Omimi</a>
+                        </li>
                     </ul>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form>
                 </div>
             </div>
         </nav>
@@ -305,19 +266,19 @@
             <div class="order-form1">
                 <h2>Sword Order Form</h2>
                 <form class="order" action="mailto:rechkemmer3@gamil.com">
-                    Your name:<input type="text" name="user name" placeholder="John Smith"><br /><br />
-                    your email:<input type="text" name="email" placeholder="myemail@email.com"> <br /><br />
-                    Address 1:<input type="text" name="address 1" placeholder="234 wallaby way"> <br /><br />
-                    address 2:<input type="text" name="address 2" placeholder="building 5, apt 5"> <br /><br />
-                    City:<input type="text" name="city" placeholder="Des Moines"> <br /><br />
-                    State/ Province:<input type="text" name="State/ Province" placeholder="Iowa"> <br /><br />
-                    Zip Code:<input type="text" name="zip_code" placeholder="50317"> <br /><br />
-                    Country:<input type="text" name="country" placeholder="United stat3es"> <br /><br />
-                    your phone number:<input type="text" name="address" placeholder="555-555-5555"> <br /><br />
-                    L6:<input type="checkbox" name="l6"> <br /><br />
-                    1086:<input type="checkbox" name="1086"> <br /><br />
-                    Length of Blade:<input type="text" name="Length of Blade"> <br /><br />
-                    Depth of Sori:<input type="text" name="Depth of Sori"> <br /><br />
+                    Your name: <input type="text" name="user name" placeholder="John Smith"><br /><br />
+                    your email: <input type="text" name="email" placeholder="myemail@email.com"> <br /><br />
+                    Address 1: <input type="text" name="address 1" placeholder="234 wallaby way"> <br /><br />
+                    address 2: <input type="text" name="address 2" placeholder="building 5, apt 5"> <br /><br />
+                    City: <input type="text" name="city" placeholder="Des Moines"> <br /><br />
+                    State/ Province: <input type="text" name="State/ Province" placeholder="Iowa"> <br /><br />
+                    Zip Code: <input type="text" name="zip_code" placeholder="50317"> <br /><br />
+                    Country: <input type="text" name="country" placeholder="United stat3es"> <br /><br />
+                    your phone number: <input type="text" name="address" placeholder="555-555-5555"> <br /><br />
+                    L6: <input type="checkbox" name="l6"> <br /><br />
+                    1086: <input type="checkbox" name="1086"> <br /><br />
+                    Length of Blade: <input type="text" name="Length of Blade"> <br /><br />
+                    Depth of Sori: <input type="text" name="Depth of Sori"> <br /><br />
                     other specifications:<br />
                     <textarea row="row" cols="cols" name="other specifications"> </textarea> <br /><br />
                     <input id="submit_button" type="submit" value="Send">
