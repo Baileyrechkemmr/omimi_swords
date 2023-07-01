@@ -61,7 +61,7 @@ def order_form(request):
             return render(request, 'projects/order_form.html')
     else:
         form = OrderForm()
-    return render(request, 'projects/order_form.html')
+    return render(request, 'projects/order_form.html', {'form': form})
 
 
 def details_h(request, hotel_id):
@@ -80,7 +80,7 @@ def sales(request):
     else:
         form = SalesForm()
     sword_sales = Sword_sales.objects
-    return render(request, 'projects/sales.html', {'sword_sales': sword_sales})
+    return render(request, 'projects/sales.html', {'sword_sales': sword_sales, "form": form})
 
 
 def details_sales(request, sword_sales_id):

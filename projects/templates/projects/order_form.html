@@ -265,8 +265,15 @@
             <!-- START THE FEATURETTES -->
             <div class="order-form1">
                 <h2>Sword Order Form</h2>
-                <form class="order" action="mailto:rechkemmer3@gamil.com">
-                    Your name: <input type="text" name="client name" placeholder="John Smith"><br /><br />
+                <form class="" method="post" action=".">
+                        {% csrf_token %}
+                    
+                        {{form.as_p}}
+                    
+                        <button>submit</button>
+                    
+                    
+                    <!-- Your name: <input type="text" name="client name" placeholder="John Smith"><br /><br />
                     your email: <input type="text" name="email" placeholder="myemail@email.com"> <br /><br />
                     Address 1: <input type="text" name="address 1" placeholder="234 wallaby way"> <br /><br />
                     address 2: <input type="text" name="address 2" placeholder="building 5, apt 5"> <br /><br />
@@ -281,7 +288,7 @@
                     Depth of Sori: <input type="text" name="Depth of Sori"> <br /><br />
                     other specifications: <br />
                     <textarea row="row" cols="cols" name="other specifications"> </textarea> <br /><br />
-                    <button id="submit_button" type="submit">submit</button>
+                    <button id="submit_button" type="submit">submit</button> -->
                 </form> <br/>
                 <p>all measurements are in inches</p>
                 <p>To secure your order, send a PayPal payment of $1000 deposit to howard@mvforge.com and please include complete contact
