@@ -1,18 +1,26 @@
 from django.shortcuts import render, get_object_or_404
+
+from .forms import ClassesForm
+
 from .models import Year, Classes, Sword_img, Hotel, Blog, Sword_sales
 # Create your views here.
+
+
 def home(request):
     swords = Sword_img.objects
     return render(request, 'projects/home.html', {'swords': swords})
 
+
 def about(request):
     return render(request, 'projects/about.html')
 
+
 def classes(request):
+    form = ClassesForm
     year = Year.objects
     classes = Classes.objects
-    hotel= Hotel.objects
-    return render(request, 'projects/classes.html', {'classes': classes, 'hotel': hotel, 'year': year})
+    hotel = Hotel.objects
+    return render(request, 'projects/classes.html', {'classes': classes, 'hotel': hotel, 'year': year, "form": form})
 
 
 def movie(request):
