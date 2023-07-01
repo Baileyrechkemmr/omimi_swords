@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 
-from .forms import ClassesForm
+from .forms import ClassesForm, OrderForm, SalesForm
 
 from .models import Year, Classes, Sword_img, Hotel, Blog, Sword_sales
 # Create your views here.
@@ -52,6 +52,15 @@ def details_s(request, sword_img_id):
 
 
 def order_form(request):
+    if request.method == 'POST':
+        form = OrderForm(request.POST)
+
+        if form.is_valid():
+            print('the form was valid')
+
+            return render(request, 'projects/order_form.html')
+    else:
+        form = OrderForm()
     return render(request, 'projects/order_form.html')
 
 
@@ -61,6 +70,15 @@ def details_h(request, hotel_id):
 
 
 def sales(request):
+    if request.method == 'POST':
+        form = SalesForm(request.POST)
+
+        if form.is_valid():
+            print('the form was valid')
+
+            return render(request, 'projects/sales.html')
+    else:
+        form = SalesForm()
     sword_sales = Sword_sales.objects
     return render(request, 'projects/sales.html', {'sword_sales': sword_sales})
 
