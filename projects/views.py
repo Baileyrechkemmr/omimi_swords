@@ -21,6 +21,8 @@ def classes(request):
 
         if form.is_valid():
             print('the form was valid')
+
+            return render(request, 'projects/classes.html')
     else:
         form = ClassesForm()
     
