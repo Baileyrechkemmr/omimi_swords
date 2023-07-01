@@ -16,7 +16,14 @@ def about(request):
 
 
 def classes(request):
-    form = ClassesForm
+    if request.method == 'POST':
+        form = ClassesForm(request.POST)
+
+        if form.is_valid():
+            print('the form was valid')
+    else:
+        form = ClassesForm()
+    
     year = Year.objects
     classes = Classes.objects
     hotel = Hotel.objects
