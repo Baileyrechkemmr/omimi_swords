@@ -2,6 +2,8 @@ from django.core.mail import send_mail
 
 from django.shortcuts import render, get_object_or_404, redirect
 
+from django.template.loader import render_to_string
+
 from .forms import ClassesForm, OrderForm, SalesForm
 
 from .models import Year, Classes, Sword_img, Hotel, Blog, Sword_sales
@@ -72,7 +74,24 @@ def order_form(request):
             type_of_steel = form.cleaned_data['type_of_steel']
             other_specifications = form.cleaned_data['other_specifications']
 
-            send_mail('order form for blade', 'this is the order', ['rechkemmer3@gmail.com'] )
+            html = render_to_string('projects/emails/orderform.html',{
+                'email' : email,
+                'name' : name,
+                'address_1' : address_1,
+                'address_2': address_2,
+                'city': city,
+                'state_or_province': state_or_province,
+                'zip_code': zip_code,
+                'country': country,
+                'phone_number': phone_number,
+                'depth_of_sori': depth_of_sori,
+                'length_of_blade': length_of_blade,
+                'type_of_steel': type_of_steel,
+                'other_specifications': other_specifications
+
+            })
+
+            send_mail('order form for blade', 'this is the order', ['rechkemmer3@gmail.com'], html_message=html)
 
             return redirect('order_form')
     else:
