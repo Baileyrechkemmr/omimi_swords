@@ -1,4 +1,6 @@
-from django.shortcuts import render, get_object_or_404
+from django.core.mail import send_mail
+
+from django.shortcuts import render, get_object_or_404, redirect
 
 from .forms import ClassesForm, OrderForm, SalesForm
 
@@ -56,9 +58,23 @@ def order_form(request):
         form = OrderForm(request.POST)
 
         if form.is_valid():
-            print('the form was valid')
+            email = form.cleaned_data['email']
+            name = form.cleaned_data['name']
+            address_1 = form.cleaned_data['address_1']
+            address_2 = form.cleaned_data['address_2']
+            city = form.cleaned_data['city']
+            state_or_province = form.cleaned_data['state_or_province']
+            zip_code = form.cleaned_data['zip_code']
+            country = form.cleaned_data['country']
+            phone_number = form.cleaned_data['phone_number']
+            depth_of_sori = form.cleaned_data['depth_of_sori']
+            length_of_blade = form.cleaned_data['length_of_blade']
+            type_of_steel = form.cleaned_data['type_of_steel']
+            other_specifications = form.cleaned_data['other_specifications']
 
-            return render(request, 'projects/order_form.html')
+            send_mail('order form for blade', 'this is the order', ['rechkemmer3@gmail.com'] )
+
+            return redirect('order_form')
     else:
         form = OrderForm()
     return render(request, 'projects/order_form.html', {'form': form})
@@ -76,7 +92,7 @@ def sales(request):
         if form.is_valid():
             print('the form was valid')
 
-            return render(request, 'projects/sales.html')
+            return redirect('sales')
     else:
         form = SalesForm()
     sword_sales = Sword_sales.objects
