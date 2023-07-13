@@ -36,7 +36,7 @@ class OrderForm(forms.Form):
     other_specifications = forms.ChoiceField(widget=forms.Textarea)
 
 class SalesForm(forms.Form):
-    Item_Number = forms.IntegerField()
+    item_number = forms.IntegerField()
     email = forms.EmailField()
     name = forms.CharField(max_length=100)
     address_1 = forms.CharField(max_length=100)
