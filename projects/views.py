@@ -35,7 +35,7 @@ def classes(request):
             country = form.cleaned_data['country']
             phone_number = form.cleaned_data['phone_number']
 
-            html = render_to_string('projects/emails/orderform.html', {
+            html = render_to_string('projects/emails/classes.html', {
                 'item_number': item_number,
                 'email': email,
                 'name': name,
