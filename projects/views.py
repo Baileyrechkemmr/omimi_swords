@@ -132,12 +132,7 @@ def details_h(request, hotel_id):
 
 def sales(request):
     if request.method == 'POST':
-        form = SalesForm(request.POST)
-
-        if form.is_valid():
-            print('the form was valid')
-
-            return redirect('sales')
+        
     else:
         form = SalesForm()
     sword_sales = Sword_sales.objects
