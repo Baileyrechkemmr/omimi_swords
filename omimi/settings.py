@@ -33,7 +33,7 @@ EMAIL_HOST_USER = 'brechkemmer01@gmail.com'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587  # Use 465 for SSL/TLS encryption
 EMAIL_USE_TLS = True  # Use False for SSL/TLS encryption
-EMAIL_HOST_PASSWORD = ''
+EMAIL_HOST_PASSWORD = 'Bojangles60'
 
 # Application definition
 
