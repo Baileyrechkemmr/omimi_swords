@@ -24,7 +24,7 @@ def classes(request):
         form = ClassesForm(request.POST)
 
         if form.is_valid():
-            item_number = form.cleaned_data['item_number']
+            class_name = form.cleaned_data['class_name']
             email = form.cleaned_data['email']
             name = form.cleaned_data['name']
             address_1 = form.cleaned_data['address_1']
@@ -36,7 +36,7 @@ def classes(request):
             phone_number = form.cleaned_data['phone_number']
 
             html = render_to_string('projects/emails/classes.html', {
-                'item_number': item_number,
+                'class_name': class_name,
                 'email': email,
                 'name': name,
                 'address_1': address_1,
@@ -49,7 +49,8 @@ def classes(request):
 
             })
 
-            send_mail('order form for blade', 'order', ['rechkemmer3@gmail.com'], html_message=html)
+            send_mail('form for class singe up', 'student info',
+                    ['brechkemmer01@gmail.com'], html_message=html)
 
             return redirect('classes')
     else:
@@ -117,7 +118,7 @@ def order_form(request):
             })
 
             send_mail('order form for blade', 'this is the order',
-                      ['rechkemmer3@gmail.com'], html_message=html)
+                    ['brechkemmer01@gmail.com'], html_message=html)
 
             return redirect('order_form')
     else:
@@ -132,7 +133,39 @@ def details_h(request, hotel_id):
 
 def sales(request):
     if request.method == 'POST':
-        
+        form = SalesForm(request.POST)
+
+        if form.is_valid():
+            item_number = form.cleaned_data['item_number']
+            email = form.cleaned_data['email']
+            name = form.cleaned_data['name']
+            address_1 = form.cleaned_data['address_1']
+            address_2 = form.cleaned_data['address_2']
+            city = form.cleaned_data['city']
+            state_or_province = form.cleaned_data['state_or_province']
+            zip_code = form.cleaned_data['zip_code']
+            country = form.cleaned_data['country']
+            phone_number = form.cleaned_data['phone_number']
+
+            html = render_to_string('projects/emails/salesform.html', {
+                'item_number': item_number,
+                'email': email,
+                'name': name,
+                'address_1': address_1,
+                'address_2': address_2,
+                'city': city,
+                'state_or_province': state_or_province,
+                'zip_code': zip_code,
+                'country': country,
+                'phone_number': phone_number,
+
+            })
+
+            send_mail('order form for blade sales', 'this is the order',
+                    ['brechkemmer01@gmail.com'], html_message=html)
+
+            return redirect('sales')
+
     else:
         form = SalesForm()
     sword_sales = Sword_sales.objects
