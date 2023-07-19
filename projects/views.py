@@ -120,7 +120,7 @@ def order_form(request):
             send_mail('order form for blade', 'this is the order',
                     ['brechkemmer01@gmail.com'], html_message=html)
 
-            return redirect('order_form')
+            return redirect('projects/order_form.html')
     else:
         form = OrderForm()
     return render(request, 'projects/order_form.html', {'form': form})

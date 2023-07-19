@@ -91,6 +91,8 @@
         }
 
         .container_blog{
+            display: flex;
+            flex-direction: column-reverse;
             overflow-y: scroll;
             scrollbar-width: thin; /* Set the width of the scrollbar */
             scrollbar-color: transparent transparent; /* Set the color of the scrollbar */
@@ -100,6 +102,8 @@
             margin: 5%;
             background-color: rgb(107, 109, 109);
             max-height: 70vh;
+            max-width: 60%;
+            border: #5a23c8 solid 5px;
         }
         .container_blog::-webkit-scrollbar {
             width: 6px; /* Set the width of the scrollbar */
@@ -124,9 +128,9 @@
         body{
             background-color: rgb(107, 109, 109);
         }
-        .container_blog{
+        .container_marketing {
             display: flex;
-            flex-direction: column-reverse;
+            flex-direction: row-reverse;
         }
 
         
@@ -269,7 +273,11 @@
             <!-- Three columns of text below the carousel -->
 
 
-            <!-- START THE FEATURETTES -->
+            <div class="blog_pic">
+                <div class="pic">
+                    <img src="{% static 'howard1.jpeg' %}" rect width="100%" height="450" />
+                </div>
+            </div>
             <!-- idea for the blog but old school blog post vibe with just bright enough colors to make it pop and still easy to read. -->
             <div class="container_blog">
                 {% for blog in blog.all %}
