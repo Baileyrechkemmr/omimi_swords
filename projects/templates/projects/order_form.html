@@ -265,12 +265,47 @@
             <!-- START THE FEATURETTES -->
             <div class="order-form1">
                 <h2>Sword Order Form</h2>
-                <form class="" method="POST" action=".">
-                        {% csrf_token %}
+                <form class="" method="POST" action="{% url 'order_form' %}">
+                    {% csrf_token %}
+                    <input type = "email" name="email" placeholder="example@example.com" required>
+                    <br />
+                    <br />
+                    <input type="text" name="name" placeholder="John Doe" required>
+                    <br />
+                    <br />
+                    <input type="text" name="address_1" placeholder="P.Sherman 42 wallaby way" required>
+                    <br />
+                    <br />
+                    <input type="text" name="address_2" placeholder=" aprt 42" required>
+                    <br />
+                    <br />
+                    <input type="text" name="city" placeholder="Sydney" required>
+                    <br />
+                    <br />
+                    <input type="text" name="state_or_province" placeholder="Iowa" required>
+                    <br />
+                    <br />
+                    <input type="text" name="zip_code" placeholder="23456" required>
+                    <br />
+                    <br />
+                    <input type="text" name="country" placeholder="Australia" required>
+                    <br />
+                    <br />
+                    <input type="tel" name="phone_number" placeholder="515-555-5555" required>
+                    <br />
+                    <br />
+                    <input type="text" name="depth_of_sori" placeholder="Sydney" required>
+                    <br />
+                    <br />
+                    <input type="text" name="length_of_blade" placeholder="Iowa" required>
+                    <br />
+                    <br />
+                    <input type="text" name="type_of_steel" placeholder="23456" required>
+                    <br />
+                    <br />
+                    <textarea name="other_specifications" placeholder="other specifications">
                     
-                        {{form.as_p}}
-                    
-                        <button>submit</button>
+                    <button>submit</button>
                 </form> <br/>
                 <p>all measurements are in inches</p>
                 <p>To secure your order, send a PayPal payment of $1000 deposit to howard@mvforge.com and please include complete contact
