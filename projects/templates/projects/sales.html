@@ -255,10 +255,38 @@
             <div class="sales_form">
                 <form class="" method="post" action=".">
                     {% csrf_token %}
-                
-                    {{form.as_p}}
-                
-                    <button>submit</button>
+                    Item Number: <input type="number" name="Item_Number" required>
+                    <br />
+                    <br />
+                    Email: <input type="email" name="email" placeholder="example@example.com" required>
+                    <br />
+                    <br />
+                    Name: <input type="text" name="name" placeholder="John Doe" required>
+                    <br />
+                    <br />
+                    Address 1: <input type="text" name="address_1" placeholder="P.Sherman 42 wallaby way" required>
+                    <br />
+                    <br />
+                    Address 2:<input type="text" name="address_2" placeholder=" aprt 42" required>
+                    <br />
+                    <br />
+                    City: <input type="text" name="city" placeholder="Sydney" required>
+                    <br />
+                    <br />
+                    State or Province: <input type="text" name="state_or_province" placeholder="Iowa" required>
+                    <br />
+                    <br />
+                    Zip Code: <input type="text" name="zip_code" placeholder="23456" required>
+                    <br />
+                    <br />
+                    Country: <input type="text" name="country" placeholder="Australia" required>
+                    <br />
+                    <br />
+                    Phone Number <input type="tel" name="phone_number" placeholder="515-555-5555" required>
+                    <br />
+                    <br />
+
+                    <button class="slaes_order_form_button" type="submit">submit</button>
 
                 </form>
         
