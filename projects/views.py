@@ -96,7 +96,7 @@ def order_form(request):
         phone_number = request.POST.get('phone_number', '')
         depth_of_sori = request.POST.get('depth_of_sori', '')
         length_of_blade = request.POST.get('length_of_blade', '')
-        radio = request.POST.get('radio', '')
+        type_of_steel = request.POST.get('type_of_steel', '')
         other_specifications = request.POST.get('other_specifications', '')
 
         messages = f"""
@@ -111,7 +111,7 @@ def order_form(request):
         Phone Number: {phone_number}
         Depth of Sori: {depth_of_sori}
         Length of Blade: {length_of_blade}
-        Radio: {radio}
+        Type of Steel: {type_of_steel}
         Other Specifications: {other_specifications}
         """
         send_mail(
