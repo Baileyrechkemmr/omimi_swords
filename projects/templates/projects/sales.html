@@ -253,7 +253,7 @@
             </div>
             <!-- /END THE FEATURETTES -->
             <div class="sales_form">
-                <form class="" method="post" action=".">
+                <form class="" method="POST" action="{% url 'sales' %}">
                     {% csrf_token %}
                     Item Number: <input type="number" name="Item_Number" required>
                     <br />

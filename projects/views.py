@@ -6,8 +6,6 @@ from django.template.loader import render_to_string
 from django.core.mail import send_mail
 from django.conf import settings
 
-from .forms import ClassesForm, OrderForm, SalesForm
-
 from .models import Year, Classes, Sword_img, Hotel, Blog, Sword_sales
 # Create your views here.
 
@@ -23,45 +21,39 @@ def about(request):
 
 def classes(request):
     if request.method == 'POST':
-        form = ClassesForm(request.POST)
+        class_name = request.POST.get('class_name', '')
+        email = request.POST.get('email', '')
+        name = request.POST.get('name', '')
+        address_1 = request.POST.get('address_1', '')
+        address_2 = request.POST.get('address_2', '')
+        city = request.POST.get('city', '')
+        state_or_province = request.POST.get('state_or_province', '')
+        zip_code = request.POST.get('zip_code', '')
+        country = request.POST.get('country', '')
+        phone_number = request.POST.get('phone_number', '')
 
-        if form.is_valid():
-            class_name = form.cleaned_data['class_name']
-            email = form.cleaned_data['email']
-            name = form.cleaned_data['name']
-            address_1 = form.cleaned_data['address_1']
-            address_2 = form.cleaned_data['address_2']
-            city = form.cleaned_data['city']
-            state_or_province = form.cleaned_data['state_or_province']
-            zip_code = form.cleaned_data['zip_code']
-            country = form.cleaned_data['country']
-            phone_number = form.cleaned_data['phone_number']
-
-            html = render_to_string('projects/emails/classes.html', {
-                'class_name': class_name,
-                'email': email,
-                'name': name,
-                'address_1': address_1,
-                'address_2': address_2,
-                'city': city,
-                'state_or_province': state_or_province,
-                'zip_code': zip_code,
-                'country': country,
-                'phone_number': phone_number,
-
-            })
-
-            send_mail('form for class singe up', 'student info',
-                    ['brechkemmer01@gmail.com'], html_message=html)
-
-            return redirect('classes')
-    else:
-        form = ClassesForm()
-
+        messages = f"""
+        Class Name: {class_name}
+        Email: {email}
+        Name: {name}
+        Address 1: {address_1}
+        Address 2: {address_2}
+        City: {city}
+        State or Province: {state_or_province}
+        Zip Code: {zip_code}
+        Country: {country}
+        Phone Number: {phone_number}
+        """
+        send_mail(
+            'class singe up form',  # email titel
+            messages,  # messages
+            'settings.EMAIL_HOST_USER',  # email for site
+            ['rechkemmer3@gmail.com'],  # email of recever
+            fail_silently=False)
     year = Year.objects
     classes = Classes.objects
     hotel = Hotel.objects
-    return render(request, 'projects/classes.html', {'classes': classes, 'hotel': hotel, 'year': year, "form": form})
+    return render(request, 'projects/classes.html', {'classes': classes, 'hotel': hotel, 'year': year})
 
 
 def movie(request):
