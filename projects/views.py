@@ -4,6 +4,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 
 from django.template.loader import render_to_string
 from django.core.mail import send_mail
+from django.conf import settings
 
 from .forms import ClassesForm, OrderForm, SalesForm
 
@@ -84,47 +85,42 @@ def details_s(request, sword_img_id):
 
 def order_form(request):
     if request.method == 'POST':
-        form = OrderForm(request.POST)
+        email = request.POST.get('email', '')
+        name = request.POST.get('name', '')
+        address_1 = request.POST.get('address_1', '')
+        address_2 = request.POST.get('address_2', '')
+        city = request.POST.get('city', '')
+        state_or_province = request.POST.get('state_or_province', '')
+        zip_code = request.POST.get('zip_code', '')
+        country = request.POST.get('country', '')
+        phone_number = request.POST.get('phone_number', '')
+        depth_of_sori = request.POST.get('depth_of_sori', '')
+        length_of_blade = request.POST.get('length_of_blade', '')
+        radio = request.POST.get('radio', '')
+        other_specifications = request.POST.get('other_specifications', '')
 
-        if form.is_valid():
-            email = form.cleaned_data['email']
-            name = form.cleaned_data['name']
-            address_1 = form.cleaned_data['address_1']
-            address_2 = form.cleaned_data['address_2']
-            city = form.cleaned_data['city']
-            state_or_province = form.cleaned_data['state_or_province']
-            zip_code = form.cleaned_data['zip_code']
-            country = form.cleaned_data['country']
-            phone_number = form.cleaned_data['phone_number']
-            depth_of_sori = form.cleaned_data['depth_of_sori']
-            length_of_blade = form.cleaned_data['length_of_blade']
-            type_of_steel = form.cleaned_data['type_of_steel']
-            other_specifications = form.cleaned_data['other_specifications']
-
-            html = render_to_string('projects/emails/orderform.html', {
-                'email': email,
-                'name': name,
-                'address_1': address_1,
-                'address_2': address_2,
-                'city': city,
-                'state_or_province': state_or_province,
-                'zip_code': zip_code,
-                'country': country,
-                'phone_number': phone_number,
-                'depth_of_sori': depth_of_sori,
-                'length_of_blade': length_of_blade,
-                'type_of_steel': type_of_steel,
-                'other_specifications': other_specifications
-
-            })
-
-            send_mail('order form for blade', 'this is the order',
-                    ['brechkemmer01@gmail.com'], html_message=html)
-
-            return redirect('projects/order_form.html')
-    else:
-        form = OrderForm()
-    return render(request, 'projects/order_form.html', {'form': form})
+        messages = f"""
+        Email: {email}
+        Name: {name}
+        Address 1: {address_1}
+        Address 2: {address_2}
+        City: {city}
+        State or Province: {state_or_province}
+        Zip Code: {zip_code}
+        Country: {country}
+        Phone Number: {phone_number}
+        Depth of Sori: {depth_of_sori}
+        Length of Blade: {length_of_blade}
+        Radio: {radio}
+        Other Specifications: {other_specifications}
+        """
+        send_mail(
+            'Sword order form', #email titel
+            messages, # messages
+            'settings.EMAIL_HOST_USER', #email for site
+            ['brechkemmer01@gmail.com'], #email of recever
+        fail_silently=False)
+    return render(request, 'projects/order_form.html', )
 
 
 def details_h(request, hotel_id):
