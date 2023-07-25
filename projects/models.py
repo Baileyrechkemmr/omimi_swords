@@ -1,6 +1,7 @@
 from django.db import models
-from ckeditor.fields import RichTextField
+
 from django.utils.html import strip_tags
+from ckeditor.fields import RichTextField
 # Create your models here.
 #what u added at the admin page path
 

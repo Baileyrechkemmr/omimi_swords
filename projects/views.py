@@ -48,7 +48,7 @@ def classes(request):
             'class singe up form',  # email titel
             messages,  # messages
             'settings.EMAIL_HOST_USER',  # email for site
-            ['rechkemmer3@gmail.com'],  # email of recever
+            ['bigearincornpatch@gmail.com'],  # email of recever
             fail_silently=False)
     year = Year.objects
     classes = Classes.objects
@@ -110,7 +110,7 @@ def order_form(request):
             'Sword order form', #email titel
             messages, # messages
             'settings.EMAIL_HOST_USER', #email for site
-            ['rechkemmer3@gmail.com'], #email of recever
+            ['bigearincornpatch@gmail.com'],  # email of recever
         fail_silently=False)
     return render(request, 'projects/order_form.html', )
 
@@ -122,7 +122,7 @@ def details_h(request, hotel_id):
 
 def sales(request):
     if request.method == 'POST':
-        form = SalesForm(request.POST)
+        
 
         if form.is_valid():
             item_number = form.cleaned_data['item_number']
