@@ -118,7 +118,7 @@ def order_form(request):
             'Sword order form', #email titel
             messages, # messages
             'settings.EMAIL_HOST_USER', #email for site
-            ['brechkemmer01@gmail.com'], #email of recever
+            ['rechkemmer3@gmail.com'], #email of recever
         fail_silently=False)
     return render(request, 'projects/order_form.html', )
 
