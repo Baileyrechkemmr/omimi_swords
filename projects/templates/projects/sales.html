@@ -89,6 +89,7 @@
         }
 
         .card_container {
+            border: #5a23c8 solid 4px;
             display: flex;
             flex-direction: row;
             gap: 7px;
@@ -249,7 +250,7 @@
                     <img src="{{ sword_sales.image.url }}" class="card-img-top" alt="{{ sword_sales.image }}">
                     <div class="card-body">
                         <h5 class="card-title">{{ sword_sales.title }}</h5>
-                        <a href="{% url 'details_s' sword_img.id %}" class="btn btn-primary">Learn more</a>
+                        <a href="{% url 'details_sales' sword_sales.id %}" class="btn btn-primary">Learn more</a>
                     </div>
                 </div>
                 {% endfor %}
