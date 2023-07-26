@@ -122,43 +122,39 @@ def details_h(request, hotel_id):
 
 def sales(request):
     if request.method == 'POST':
-        
+        item_number = request.POST.get('item_number', '')
+        email = request.POST.get('email', '')
+        name = request.POST.get('name', '')
+        address_1 = request.POST.get('address_1', '')
+        address_2 = request.POST.get('address_2', '')
+        city = request.POST.get('city', '')
+        state_or_province = request.POST.get('state_or_province', '')
+        zip_code = request.POST.get('zip_code', '')
+        country = request.POST.get('country', '')
+        phone_number = request.POST.get('phone_number', '')
 
-        if form.is_valid():
-            item_number = form.cleaned_data['item_number']
-            email = form.cleaned_data['email']
-            name = form.cleaned_data['name']
-            address_1 = form.cleaned_data['address_1']
-            address_2 = form.cleaned_data['address_2']
-            city = form.cleaned_data['city']
-            state_or_province = form.cleaned_data['state_or_province']
-            zip_code = form.cleaned_data['zip_code']
-            country = form.cleaned_data['country']
-            phone_number = form.cleaned_data['phone_number']
+        messages = f"""
+        Item Number: {item_number}
+        Email: {email}
+        Name: {name}
+        Address 1: {address_1}
+        Address 2: {address_2}
+        City: {city}
+        State or Province: {state_or_province}
+        Zip Code: {zip_code}
+        Country: {country}
+        Phone Number: {phone_number}
+        """
+        send_mail(
+            'knife sales order form',  # email titel
+            messages,  # messages
+            'settings.EMAIL_HOST_USER',  # email for site
+            ['bigearincornpatch@gmail.com'],  # email of recever
+            fail_silently=False)
 
-            html = render_to_string('projects/emails/salesform.html', {
-                'item_number': item_number,
-                'email': email,
-                'name': name,
-                'address_1': address_1,
-                'address_2': address_2,
-                'city': city,
-                'state_or_province': state_or_province,
-                'zip_code': zip_code,
-                'country': country,
-                'phone_number': phone_number,
 
-            })
-
-            send_mail('order form for blade sales', 'this is the order',
-                    ['brechkemmer01@gmail.com'], html_message=html)
-
-            return redirect('sales')
-
-    else:
-        form = SalesForm()
     sword_sales = Sword_sales.objects
-    return render(request, 'projects/sales.html', {'sword_sales': sword_sales, "form": form})
+    return render(request, 'projects/sales.html', {'sword_sales': sword_sales})
 
 
 def details_sales(request, sword_sales_id):
