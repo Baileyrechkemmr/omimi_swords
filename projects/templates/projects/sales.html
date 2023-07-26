@@ -258,7 +258,7 @@
             <div class="sales_form">
                 <form class="" method="POST" action="{% url 'sales' %}">
                     {% csrf_token %}
-                    Item Number: <input type="number" name="item_number" required>
+                    Item Number: <input type="number" name="item_number" required min="1">
                     <br />
                     <br />
                     Email: <input type="email" name="email" placeholder="example@example.com" required>
