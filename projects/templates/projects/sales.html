@@ -99,7 +99,24 @@
             gap: 7px;
             flex-wrap: wrap;
             height: 75vh;
+            width: 70vw;
             overflow-y: scroll;
+            scrollbar-width: thin; /* Set the width of the scrollbar */
+            scrollbar-color: transparent transparent; /* Set the color of the scrollbar */
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* Internet Explorer and Edge */
+            /* border: #712cf9 solid 4px; */
+        }
+        .card_container::-webkit-scrollbar {
+            width: 6px; /* Set the width of the scrollbar */
+        }
+
+        .card_container::-webkit-scrollbar-thumb {
+        background-color: transparent; /* Set the color of the scrollbar thumb */
+        }
+
+        .card_container::-webkit-scrollbar-track {
+        background-color: transparent; /* Set the color of the scrollbar track */
         }
 
         .card-img-top {
