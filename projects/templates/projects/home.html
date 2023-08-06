@@ -120,7 +120,11 @@
             border-radius: 12px;
         }
 
-        .button::after {
+        .glow-button:hover {
+            color: rgba(255, 255, 255, 1);
+            box-shadow: 0 5px 15px rgba(145, 92, 182, .4);
+            }
+            /* .button::after {
             content: "";
             z-index: -1;
             position: absolute;
@@ -134,8 +138,12 @@
         }
 
         .button::before {
-            
-        }
+            content: "";
+            background: linear-gradient(
+                45deg,
+
+            );
+        } */
         /* end button */
         .class_peek_image {
             height: 500px;
