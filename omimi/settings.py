@@ -38,7 +38,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'projects',
+    'projects.apps.ProjectsConfig',
     'ckeditor',
     'django.contrib.admin',
     'django.contrib.auth',
