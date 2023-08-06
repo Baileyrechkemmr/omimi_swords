@@ -107,10 +107,36 @@
         justify-content: space-between;
         height: 100%; /* Ensure each column takes full height of its parent */
         }
-        button {
+
+        /* button */
+        .button {
             width: 250px;
+            padding: 10px;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            position: relative;
+            z-index: 0;
+            border-radius: 12px;
         }
 
+        .button::after {
+            content: "";
+            z-index: -1;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #333;
+            left: 0;
+            top:0;
+            border-radius: 10px;
+
+        }
+
+        .button::before {
+            
+        }
+        /* end button */
         .class_peek_image {
             height: 500px;
             border-radius: 10px;
@@ -281,18 +307,18 @@
                 <div class="col-lg-4">
                     <img class="rounded-circle mb-3" src="{% static 'classes_image_1.png' %}" style="width: 150px; height: 150px">
                     <h2 class="fw-normal">Classes at Morgan Valley Forge</h2>
-                    <button class="btn btn-secondary" href="{% url 'classes' %}">go to classes &raquo;</a></button>
+                    <button class="button" href="{% url 'classes' %}">go to classes &raquo;</a></button>
                 </div><!-- /.col-lg-4 -->
                 <div class="col-lg-4">
                     <img class="rounded-circle mb-3" src="{% static 'classes_image_1.png' %}" style="width: 150px; height: 150px">
                     <h2 class="fw-normal">Morgan Valley Forge Blog</h2>
-                    <button class="btn btn-secondary" href="{% url 'blog' %}">blog &raquo;</a></button>
+                    <button class="button" href="{% url 'blog' %}">blog &raquo;</a></button>
                 </div><!-- /.col-lg-4 -->
                 <div class="col-lg-4">
                     <img class="rounded-circle mb-3" src="{% static 'profile_pic_1.png' %}" style="width: 150px; height: 150px">
                     <h2 class="fw-normal">about</h2>
                     <p>.</p>
-                    <button class="btn btn-secondary" href="{% url 'about' %}">About &raquo;</a></button>
+                    <button class="button" href="{% url 'about' %}">About &raquo;</a></button>
                 </div><!-- /.col-lg-4 -->
             </div><!-- /.row -->
 
