@@ -119,12 +119,8 @@
             z-index: 0;
             border-radius: 12px;
         }
-
-        .glow-button:hover {
-            color: rgba(255, 255, 255, 1);
-            box-shadow: 0 5px 15px rgba(145, 92, 182, .4);
-            }
-            /* .button::after {
+        
+        .button::after {
             content: "";
             z-index: -1;
             position: absolute;
@@ -140,10 +136,29 @@
         .button::before {
             content: "";
             background: linear-gradient(
-                45deg,
-
+                90deg,
+                #ff0000, #ff7300,#ff0000, #ff7300, #ff0000, #ff7300,   #ff0000
             );
-        } */
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            background-size: 600%;
+            z-index: -1;
+            width: calc(100% + 4px);
+            height: calc(100% + 4px);
+            filter:blur(8px);
+            animation: glowing 5s linear infinite;
+            transition: opacity 0.3s ease-in-out;
+            border-radius: 10px;
+            opacity: 0;
+        }
+        @keyframes glowing {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        
+
         /* end button */
         .class_peek_image {
             height: 500px;
