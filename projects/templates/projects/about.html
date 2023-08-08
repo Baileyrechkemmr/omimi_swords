@@ -107,21 +107,18 @@
 
         }
 
+    
+
         p, h4 {
             color: rgb(242, 239, 234);
         }
         .about_pic {
-            border: red solid 4px;
-            
+            display: flex;
+            justify-content: center;
+            align-items: center;
             margin-top: 60px;
-            margin-left: 44%;
-            margin-right: 44%;
-
         }
-        img {
-            padding: 4%;
-            
-        }
+        
         #page-container {
             position: relative;
             min-height: 100vh;
@@ -129,6 +126,13 @@
 
         #content-wrap {
             padding-bottom: 2.5rem;    /* Footer height */
+        }
+
+
+        .image {
+            display: flex;
+            border: red solid 4px;
+            padding: 1.5%;
         }
 
         #container_footer{
@@ -209,7 +213,9 @@
 
                 <!-- this page is the test for a image background -->
                 <div class="about_pic">
-                    <img class="Profile_pic" src="{% static 'profile_pic_1.png' %}" style="width: 150px; height: 150px"/>
+                    <div class="image">
+                        <img class="Profile_pic" src="{% static 'profile_pic_1.png' %}" style="width: 150px; height: 150px"/>
+                    </div>
                 </div>
 
                 <div class="about_info">
