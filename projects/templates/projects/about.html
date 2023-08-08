@@ -90,9 +90,14 @@
             z-index: 1500;
         }
 
-        body{
-            background-color: rgb(107, 109, 109);
-            
+        body {
+            background-image: url("{% static 'howard1.jpeg' %}");
+            background-size: 75%;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-color: rgb(129, 38, 38);
+            backdrop-filter: blur(5px);
         }
 
         .about_info{
@@ -105,154 +110,138 @@
         p, h4 {
             color: rgb(242, 239, 234);
         }
-        img {
+        .about_pic {
+            border: red solid 4px;
+            
             margin-top: 60px;
+            margin-left: 44%;
+            margin-right: 44%;
+
+        }
+        img {
+            padding: 4%;
+            
         }
     </style>
 
 
     <!-- Custom styles for this template -->
-    <link href="carousel.css" rel="stylesheet">
+    
 </head>
 
 <body>
-    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-        <symbol id="check2" viewBox="0 0 16 16">
-            <path
-                d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
-        </symbol>
-        <symbol id="circle-half" viewBox="0 0 16 16">
-            <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z" />
-        </symbol>
-        <symbol id="moon-stars-fill" viewBox="0 0 16 16">
-            <path
-                d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z" />
-            <path
-                d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z" />
-        </symbol>
-        <symbol id="sun-fill" viewBox="0 0 16 16">
-            <path
-                d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
-        </symbol>
-    </svg>
-
-
-
-
-    <header data-bs-theme="dark">
-        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#"></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{% url 'classes' %}">Classes</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{% url 'blog' %}">Blog</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{% url 'about' %}">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{% url 'movie' %}">L6 bainite movie</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{% url 'gallery' %}">Gallery</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{% url 'order_form' %}">Order a sword
-                                from Omimi</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{% url 'sales' %}">Sales</a>
-                        </li>
-                    </ul>
+    <div class="content">
+        <header data-bs-theme="dark">
+            <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#"></a> <!--   keep for posable brand after talking to buddy     -->
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarCollapse">
+                        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="{% url 'classes' %}">Classes</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="{% url 'blog' %}">Blog</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="{% url 'about' %}">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="{% url 'movie' %}">L6 bainite movie</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="{% url 'gallery' %}">Gallery</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="{% url 'order_form' %}">Order a sword
+                                    from Omimi</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="{% url 'sales' %}">Sales</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        </nav>
-    </header>
+            </nav>
+        </header>
 
-    <main>
+        <main>
 
-       
+            <!-- Marketing messaging and featurettes
+    ================================================== -->
+            <!-- Wrap the rest of the page in another container to center all the content. -->
 
+            <div class="container_marketing">
 
-        <!-- Marketing messaging and featurettes
-  ================================================== -->
-        <!-- Wrap the rest of the page in another container to center all the content. -->
+                
+                <!-- photo should be along side the about page. like an ado-biography  -->
 
-        <div class="container_marketing">
+                <!-- START THE FEATURETTES -->
 
-            
-            <!-- photo should be along side the about page. like an ado-biography  -->
+                <!-- this page is the test for a image background -->
+                <div class="about_pic">
+                    <img class="Profile_pic" src="{% static 'profile_pic_1.png' %}" style="width: 150px; height: 150px"/>
+                </div>
 
-            <!-- START THE FEATURETTES -->
+                <div class="about_info">
+                    <h4>Howard Clark</h4>
+                    <p>
+                        Howard Clark is Omimi. Big Ear. The most sought after maker of Japanese style sword blades. The creator of the L6 Banite
+                        Katana which is hands down the highest performance sword blade in the world. Omimi-san has been a bladesmith for over 30
+                        years. Early on he mastered forging, damascus, and distal symmetry. As Morgan Valley Forge Howard produced knives with
+                        organic flow and keen balance. Everything he made was meant to be used and felt right in the hand. The natural style of
+                        his work in straight fixed blades and folders is distinctive.
+                        </br>
+                        </br>
+                        Howard delved deep into the science of metallurgy. Teaching himself how to read isothermal transformation diagrams he
+                        began the journey to create what he desired as the best blade. One that was tough; would not chip, crack or break. One
+                        that was hard enough to hold it’s edge for prolonged use and still be able to be resharpened. Through his research it is
+                        said Howard broke more blades deliberately than most knife-makers made. With known steel alloys, controlled
+                        temperatures, the test of the metal was in the heat treatment.
+                        </br>
+                        </br>
+                        It is interesting to see so much of what is now readily accepted as standard practice and regurgitated on internet
+                        forums and bulletin boards came originally from Howard Clark. It was a long time coming. At the git go the
+                        good-old-boys-club of knife making didn’t want to accept what this upstart was teaching. They didn’t want to hear: that
+                        blind procedure without analysis could not produce consistent quality blades; that color of a hot blade prior to
+                        quenching was subjective; that besides carbon content other alloys in a steel also played roles and changed the dynamics
+                        of the heat treatment dance for a given steel to get the desired end product.
+                        </br>
+                        </br>
+                        There are multiple reasons and much history in why Omimi is the sole source of the L6 Banite Katana. Why the Omimi 1086
+                        Katana will out match the majority of Japanese style blades and the Omimi L6 is the quantum leap beyond. It is his
+                        genius level intellect. It is his hard working hands that create. It is his eye that can look down all surfaces of a 30
+                        inch katana and see where the plane is a few thousandths of an inch off. It is Omimi.
+                        </br>
+                        </br>
+                        Welcome to the Morgan Valley Forge site. Thank you for visiting.
+                    </p>
+                </div>
 
-            <!-- this page is the test for a image background -->
-            <div class="about_pic">
-                <img class="Profile_pic" src="{% static 'profile_pic_1.png' %}" style="width: 150px; height: 150px"/>
-            </div>
+                <!-- /END THE FEATURETTES -->
 
-            <div class="about_info">
-                <h4>Howard Clark</h4>
-                <p>
-                    Howard Clark is Omimi. Big Ear. The most sought after maker of Japanese style sword blades. The creator of the L6 Banite
-                    Katana which is hands down the highest performance sword blade in the world. Omimi-san has been a bladesmith for over 30
-                    years. Early on he mastered forging, damascus, and distal symmetry. As Morgan Valley Forge Howard produced knives with
-                    organic flow and keen balance. Everything he made was meant to be used and felt right in the hand. The natural style of
-                    his work in straight fixed blades and folders is distinctive.
-                    </br>
-                    </br>
-                    Howard delved deep into the science of metallurgy. Teaching himself how to read isothermal transformation diagrams he
-                    began the journey to create what he desired as the best blade. One that was tough; would not chip, crack or break. One
-                    that was hard enough to hold it’s edge for prolonged use and still be able to be resharpened. Through his research it is
-                    said Howard broke more blades deliberately than most knife-makers made. With known steel alloys, controlled
-                    temperatures, the test of the metal was in the heat treatment.
-                    </br>
-                    </br>
-                    It is interesting to see so much of what is now readily accepted as standard practice and regurgitated on internet
-                    forums and bulletin boards came originally from Howard Clark. It was a long time coming. At the git go the
-                    good-old-boys-club of knife making didn’t want to accept what this upstart was teaching. They didn’t want to hear: that
-                    blind procedure without analysis could not produce consistent quality blades; that color of a hot blade prior to
-                    quenching was subjective; that besides carbon content other alloys in a steel also played roles and changed the dynamics
-                    of the heat treatment dance for a given steel to get the desired end product.
-                    </br>
-                    </br>
-                    There are multiple reasons and much history in why Omimi is the sole source of the L6 Banite Katana. Why the Omimi 1086
-                    Katana will out match the majority of Japanese style blades and the Omimi L6 is the quantum leap beyond. It is his
-                    genius level intellect. It is his hard working hands that create. It is his eye that can look down all surfaces of a 30
-                    inch katana and see where the plane is a few thousandths of an inch off. It is Omimi.
-                    </br>
-                    </br>
-                    Welcome to the Morgan Valley Forge site. Thank you for visiting.
-                </p>
-            </div>
-
-            <!-- /END THE FEATURETTES -->
-
-        </div><!-- /.container -->
+            </div><!-- /.container -->
 
 
-        <!-- FOOTER -->
-        <footer class="container_footer">
-            <p class="float-end"><a href="#">Back to top</a></p>
-            <p>&copy; Morgan Valley forge since 1988.</p>
-        </footer>
+            <!-- FOOTER -->
+            <footer class="container_footer">
+                <p class="float-end"><a href="#">Back to top</a></p>
+                <p>&copy; Morgan Valley forge since 1988.</p>
+            </footer>
+            </main>
         </main>
-    </main>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 
-
+    </div>
 </body>
 
 </html>
