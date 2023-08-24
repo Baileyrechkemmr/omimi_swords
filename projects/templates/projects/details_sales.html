@@ -35,6 +35,61 @@
             }
         }
 
+         /* button */
+        .button {
+            width: 150px;
+            padding: 10px;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            position: relative;
+            z-index: 0;
+            border-radius: 12px;
+            background-color: black;
+            color: white;
+        }
+        
+        .button::after {
+            content: "";
+            z-index: -1;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: linear-gradient( to bottom right, rgb(237, 6, 6), yellow);
+            left: 0;
+            top:0;
+            border-radius: 10px;
+
+        }
+
+        .button::before {
+            content: "";
+            background: linear-gradient(
+                90deg,
+                #ff0000, #ff7300,yellow, #ff7300, #ff0000, #ff7300, yellow
+            );
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            background-size: 600%;
+            z-index: -1;
+            width: calc(100% + 4px);
+            height: calc(100% + 4px);
+            filter:blur(8px);
+            animation: glowing 3.5s linear infinite;
+            transition: opacity 0.3s ease-in-out;
+            border-radius: 10px;
+            opacity: 0;
+        }
+        @keyframes glowing {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        
+
+        /* end button */
+
         body {
             background-color: rgb(4, 136, 136);
         }
@@ -53,12 +108,12 @@
             <div class="row py-lg-5">
                 <div class="col-lg-6 col-md-8 mx-auto">
                     <!-- profile image static name is the same as pic in static folder created from command python3 manage.py collectstatic -->
-                    <img class="mb-3" src='{{ sword.image.url }}' alt="{{sword.image}}"
+                    <img class="mb-3" src='{{ sword_sales_detail.image.url }}' alt="{{sword.image}}"
                         style="width: 420px; height: 490px">
-                    <h1 class="fw-light">{{ sword.title }}</h1>
-                    <p class="lead text-muted">{{ sword.description}}</p> <!-- come back later and put in -->
+                    <h1 class="fw-light">{{ sword_sales_detail.item_number }}</h1>
+                    <p class="lead text-muted">{{ sword_sales_detail.description}}</p> <!-- come back later and put in -->
                     <p>
-                        <a href="{% url 'gallery' %}" class="btn btn-primary my-2">Back</a>
+                        <button class="button" href="{% url 'gallery' %}" >Back</button>
                     </p>
                 </div>
             </div>

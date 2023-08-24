@@ -159,4 +159,4 @@ def sales(request):
 
 def details_sales(request, sword_sales_id):
     sword_sales_detail = get_object_or_404(Sword_sales, pk=sword_sales_id)
-    return render(request, 'projects/details_sales.html', {'sword_sales_detailes': sword_sales_detail})
+    return render(request, 'projects/details_sales.html', {'sword_sales_detail': sword_sales_detail})
