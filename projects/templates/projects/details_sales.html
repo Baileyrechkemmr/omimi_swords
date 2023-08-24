@@ -46,7 +46,11 @@
             z-index: 0;
             border-radius: 12px;
             background-color: black;
+            
+        }
+        .button_color{
             color: white;
+
         }
         
         .button::after {
@@ -116,7 +120,9 @@
                     <h1 class="fw-light">{{ sword_sales_detail.item_number }}</h1>
                     <p class="lead text-muted">{{ sword_sales_detail.description}}</p> <!-- come back later and put in -->
                     <p>
-                        <button class="button" href="{% url 'gallery' %}" >Back</button>
+                        <button class="button">
+                            <a class="button_color" href="{% url 'sales' %}">Back</a> 
+                        </button>
                     </p>
                 </div>
             </div>
