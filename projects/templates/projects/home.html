@@ -109,7 +109,7 @@
         }
 
         /* button */.button {
-            width: 150px;
+            width: 250px;
             padding: 10px;
             border: none;
             outline: none;
@@ -335,12 +335,16 @@
                 <div class="col-lg-4">
                     <img class="rounded-circle mb-3" src="{% static 'classes_image_1.png' %}" style="width: 150px; height: 150px">
                     <h2 class="fw-normal">Classes at Morgan Valley Forge</h2>
-                    <button class="button" href="{% url 'classes' %}">go to classes &raquo;</a></button>
+                    <button class="button">
+                        <a class="button_color" href="{% url 'classes' %}">Go to classes &raquo;</a>
+                    </button>
                 </div><!-- /.col-lg-4 -->
                 <div class="col-lg-4">
                     <img class="rounded-circle mb-3" src="{% static 'classes_image_1.png' %}" style="width: 150px; height: 150px">
                     <h2 class="fw-normal">Morgan Valley Forge Blog</h2>
-                    <button class="button" href="{% url 'blog' %}">blog &raquo;</a></button>
+                    <button class="button">
+                        <a class="button_color" href="{% url 'blog' %}">Blog &raquo;</a>
+                    </button>
                 </div><!-- /.col-lg-4 -->
                 <div class="col-lg-4">
                     <img class="rounded-circle mb-3" src="{% static 'profile_pic_1.png' %}" style="width: 150px; height: 150px">
