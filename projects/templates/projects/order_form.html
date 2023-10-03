@@ -94,6 +94,10 @@
             background-color: rgb(107, 109, 109);
             width: fit-content;
             margin-left: 4px;
+            padding-left: 1.5%;
+            padding-right: 1.8%;
+            border-radius: 10px;
+            box-shadow: rgb(0, 0, 0) 5px 15px 5px;
         }
         textarea{
             width: 400px;
@@ -102,8 +106,6 @@
             
         }
         .container_marketing{
-            border: red 4px solid;
-            
             display: flex;
             flex-direction: row;
             padding-left: 170px;
@@ -115,8 +117,12 @@
             margin-left: 43%;
         }
         .order-form-rules{
-            border: #712cf9 solid 2px;
             margin-bottom: 100px ;
+            border-radius: 10px;
+            box-shadow: rgb(0, 0, 0) 5px 15px 5px;
+            background-color: rgba(128, 128, 128, 0.842);
+            padding-left: 1.5%;
+            padding-right: 1.5%;
         }
 
         body {
@@ -129,14 +135,74 @@
             backdrop-filter: blur(5px);
         }
         
-        .order-form1 {
-            border:#5a23c8 solid 4px;
+        #container_footer{
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 2.5rem;            /* Footer height */
+            background-color: grey;
+            /* Set a fixed height for the footer to keep it at the bottom */
+            height: 40px; /* You can adjust the height as per your requirement */
         }
+
+                /* button */button {
+            width: 250px;
+            padding: 10px;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            position: relative;
+            z-index: 0;
+            border-radius: 12px;
+            background-color: black;
+            color: white;
+        }
+        
+        button::after {
+            content: "";
+            z-index: -1;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: linear-gradient( to bottom right, rgb(237, 6, 6), yellow);
+            left: 0;
+            top:0;
+            border-radius: 10px;
+
+        }
+
+        button::before {
+            content: "";
+            background: linear-gradient(
+                90deg,
+                #ff0000, #ff7300,yellow, #ff7300, #ff0000, #ff7300, yellow
+            );
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            background-size: 600%;
+            z-index: -1;
+            width: calc(100% + 4px);
+            height: calc(100% + 4px);
+            filter:blur(8px);
+            animation: glowing 3.5s linear infinite;
+            transition: opacity 0.3s ease-in-out;
+            border-radius: 10px;
+            opacity: 0;
+        }
+        @keyframes glowing {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        
+
+        /* end button */
     </style>
 
 
     <!-- Custom styles for this template -->
-    <link href="carousel.css" rel="stylesheet">
+    
 </head>
 
 <body>
@@ -206,7 +272,7 @@
 
     <main>
 
-        <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+        <!-- <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"
                     aria-current="true" aria-label="Slide 1"></button>
@@ -262,7 +328,11 @@
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
             </button>
-        </div>
+        </div> -->
+        <br/>
+        <br />
+        <br />
+        <br />
 
 
         <!-- Marketing messaging and featurettes
@@ -360,13 +430,16 @@
                 </ul>
             </div>
 
+            
+
             <!-- /END THE FEATURETTES -->
 
         </div><!-- /.container -->
-
+<br/>
+            <br/>
 
         <!-- FOOTER -->
-        <footer class="container_footer">
+        <footer id="container_footer">
             <p class="float-end"><a href="#">Back to top</a></p>
             <p>&copy; Morgan Valley forge since 1988.</p>
         </footer>
