@@ -95,9 +95,29 @@
 
         body {
             background-image: url("{% static 'details_background.png' %}");
+            background-color: rgb(129, 38, 38);
             background-repeat: no-repeat;
             background-size: 100%;
             background-position: center;
+        }
+        .container_footer {
+            background-color: grey;
+            /* Set a fixed height for the footer to keep it at the bottom */
+            height: 40px; /* You can adjust the height as per your requirement */
+        }
+        #details{
+            background-color: rgba(73, 73, 73, 0.583);
+            border-radius: 10px;
+            box-shadow: rgb(0, 0, 0) 5px 15px 5px;
+        }
+        h1 {
+            color: white;
+        }
+        #text{
+            color: white;
+        }
+        img{
+            border-radius: 10px;
         }
     </style>
 
@@ -111,13 +131,13 @@
     <main>
         <!-- top of page ware the brief intro should be along with pictures and email -->
         <section class="py-5 text-center container">
-            <div class="row py-lg-5">
+            <div id="details" class="row py-lg-5">
                 <div class="col-lg-6 col-md-8 mx-auto">
                     <!-- profile image static name is the same as pic in static folder created from command python3 manage.py collectstatic -->
                     <img class="mb-3" src='{{ sword_sales_detail.image.url }}' alt="{{sword.image}}"
                         style="width: 420px; height: 490px">
                     <h1 class="fw-light">{{ sword_sales_detail.item_number }}</h1>
-                    <p class="lead text-muted">{{ sword_sales_detail.description}}</p> <!-- come back later and put in -->
+                    <p id="text" class="lead">{{ sword_sales_detail.description}}</p>
                     <p>
                         <button class="button">
                             <a class="button_color" href="{% url 'sales' %}">Back</a> 

@@ -88,12 +88,11 @@
         }
 
         .container_marketing{
-            border: #5a23c8 solid 4px;
             display: flex;
         }
 
         .card_container {
-            border: #5a23c8 solid 4px;
+            
             display: flex;
             flex-direction: row;
             gap: 7px;
@@ -125,8 +124,13 @@
         }
 
         .sales_form{
-            border: red solid 4px;
-            background-color: rgba(128, 128, 128, 0.76);
+            border-radius: 10px;
+            box-shadow: rgb(0, 0, 0) 5px 15px 5px;
+            background-color: rgba(128, 128, 128, 0.863);
+            margin-bottom: 2%;
+            padding-right: 1.5%;
+            padding-left: 1.5%;
+            padding-bottom: 1.5%;
         }
 
         body {
@@ -138,6 +142,73 @@
             background-color: rgb(129, 38, 38);
             backdrop-filter: blur(5px);
         }
+
+        /* button */button {
+            width: 250px;
+            padding: 10px;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            position: relative;
+            z-index: 0;
+            border-radius: 12px;
+            background-color: black;
+            color: white;
+            position: sticky;
+        }
+        
+        
+        button::after {
+            content: "";
+            z-index: -1;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: linear-gradient( to bottom right, rgb(237, 6, 6), yellow);
+            left: 0;
+            top:0;
+            border-radius: 10px;
+        }
+
+        .button_color{
+            color: white;
+        }
+
+        button::before {
+            content: "";
+            background: linear-gradient(
+                90deg,
+                #ff0000, #ff7300,yellow, #ff7300, #ff0000, #ff7300, yellow
+            );
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            background-size: 600%;
+            z-index: -1;
+            width: calc(100% + 4px);
+            height: calc(100% + 4px);
+            filter:blur(8px);
+            animation: glowing 3.5s linear infinite;
+            transition: opacity 0.3s ease-in-out;
+            border-radius: 10px;
+            opacity: 0;
+        }
+        @keyframes glowing {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        .container_footer {
+            background-color: grey;
+            /* Set a fixed height for the footer to keep it at the bottom */
+            height: 40px; /* You can adjust the height as per your requirement */
+        }
+        .card {
+            background-color: rgba(128, 128, 128, 0.895)
+        }
+        
+
+        /* end button */
     </style>
 
 
@@ -212,7 +283,7 @@
 
     <main>
 
-        <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+        <!-- <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"
                     aria-current="true" aria-label="Slide 1"></button>
@@ -267,7 +338,11 @@
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
             </button>
-        </div>
+        </div> -->
+        <br/>
+        <br/>
+        <br/>
+        <br/>
 
 
         <!-- Marketing messaging and featurettes
@@ -284,7 +359,9 @@
                     <img src="{{ sword_sales.image.url }}" class="card-img-top" alt="{{ sword_sales.image }}">
                     <div class="card-body">
                         <h5 class="card-title">{{ sword_sales.title }}</h5>
-                        <a href="{% url 'details_sales' sword_sales.id %}" class="btn btn-primary">Learn more</a>
+                        <button class="button">
+                            <a class="button_color" href="{% url 'details_sales' sword_sales.id %}" class="btn btn-primary">Learn more</a>
+                        </button>
                     </div>
                 </div>
                 {% endfor %}
