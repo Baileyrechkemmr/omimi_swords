@@ -34,12 +34,89 @@
                 font-size: 3.5rem;
             }
         }
+        /* button */
+        .button {
+            width: 150px;
+            padding: 10px;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            position: relative;
+            z-index: 0;
+            border-radius: 12px;
+            background-color: rgb(8, 0, 0);
+        }
+        .button_color{
+            color: white;
+
+        }   
+        
+        .button::after {
+            content: "";
+            z-index: -1;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: linear-gradient( to bottom right, rgb(237, 6, 6), yellow);
+            left: 0;
+            top:0;
+            border-radius: 10px;
+
+        }
+
+        .button::before {
+            content: "";
+            background: linear-gradient(
+                90deg,
+                #ff0000, #ff7300,yellow, #ff7300, #ff0000, #ff7300, yellow
+            );
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            background-size: 600%;
+            z-index: -1;
+            width: calc(100% + 4px);
+            height: calc(100% + 4px);
+            filter:blur(8px);
+            animation: glowing 3.5s linear infinite;
+            transition: opacity 0.3s ease-in-out;
+            border-radius: 10px;
+            opacity: 0;
+        }
+        @keyframes glowing {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        
+
+        /* end button */
 
         body {
             background-image: url("{% static 'details_background.png' %}");
+            background-color: rgb(129, 38, 38);
             background-repeat: no-repeat;
             background-size: 100%;
             background-position: center;
+        }
+        .container_footer {
+            background-color: grey;
+            /* Set a fixed height for the footer to keep it at the bottom */
+            height: 40px; /* You can adjust the height as per your requirement */
+        }
+        #details{
+            background-color: rgba(73, 73, 73, 0.583);
+            border-radius: 10px;
+            box-shadow: rgb(0, 0, 0) 5px 15px 5px;
+        }
+        h1 {
+            color: white;
+        }
+        #text{
+            color: white;
+        }
+        img{
+            border-radius: 10px;
         }
     </style>
 
@@ -53,15 +130,17 @@
     <main>
         <!-- top of page ware the brief intro should be along with pictures and email -->
         <section class="py-5 text-center container">
-            <div class="row py-lg-5">
+            <div id="details" class="row py-lg-5">
                 <div class="col-lg-6 col-md-8 mx-auto">
                     <!-- profile image static name is the same as pic in static folder created from command python3 manage.py collectstatic -->
                     <img class="mb-3" src='{{ sword.image.url }}' alt="{{sword.image}}"
                         style="width: 420px; height: 490px">
                     <h1 class="fw-light">{{ sword.title }}</h1>
-                    <p class="lead text-muted">{{ sword.description}}</p> <!-- come back later and put in -->
+                    <p id="text" class="lead ">{{ sword.description}}</p> <!-- come back later and put in -->
                     <p>
-                        <a href="{% url 'gallery' %}" class="btn btn-primary my-2">Back</a>
+                        <button class="button">
+                            <a class="button_color" href="{% url 'gallery' %}" class="btn btn-primary my-2">Back</a>
+                        </button>
                     </p>
                 </div>
             </div>
