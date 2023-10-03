@@ -93,10 +93,14 @@
             flex-direction: row;
             gap: 7px;
             flex-wrap: wrap;
+            
         }
         .card-img-top{
             height: 300px;
             
+        }
+        .card {
+            background-color: rgba(128, 128, 128, 0.895)
         }
 
         body {
@@ -110,17 +114,73 @@
         }
 
         .container_marketing{
-            border: #5a23c8 solid 4px;
             padding: 6%;
         }
 
         .container_footer {
-            background-color: slategrey;
+            background-color: grey;
             /* Set a fixed height for the footer to keep it at the bottom */
             height: 40px; /* You can adjust the height as per your requirement */
         }
 
+        /* button */.button {
+            width: 250px;
+            padding: 10px;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            position: relative;
+            z-index: 0;
+            border-radius: 12px;
+            background-color: black;
+        }
+        .button_color{
+            color: white;
+
+        }
         
+        .button::after {
+            content: "";
+            z-index: -1;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: linear-gradient( to bottom right, rgb(237, 6, 6), yellow);
+            left: 0;
+            top:0;
+            border-radius: 10px;
+
+        }
+
+        .button::before {
+            content: "";
+            background: linear-gradient(
+                90deg,
+                #ff0000, #ff7300,yellow, #ff7300, #ff0000, #ff7300, yellow
+            );
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            background-size: 600%;
+            z-index: -1;
+            width: calc(100% + 4px);
+            height: calc(100% + 4px);
+            filter:blur(8px);
+            animation: glowing 3.5s linear infinite;
+            transition: opacity 0.3s ease-in-out;
+            border-radius: 10px;
+            opacity: 0;
+        }
+        @keyframes glowing {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        h5 {
+            text-align: center;
+        }
+
+        /* end button */
 
     </style>
 
@@ -213,7 +273,9 @@
                     <img src="{{ sword_img.image.url }}" class="card-img-top" alt="{{ swords.image }}">
                     <div class="card-body">
                         <h5 class="card-title">{{ sword_img.title }}</h5>
-                        <a href="{% url 'details_s' sword_img.id %}" class="btn btn-primary">Learn more</a>
+                        <button class="button">
+                            <a class="button_color" href="{% url 'details_s' sword_img.id %}" class="btn btn-primary">Learn more</a>
+                        </button>
                     </div>
                 </div>
                 {% endfor %}
