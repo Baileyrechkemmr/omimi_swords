@@ -101,11 +101,15 @@
             color: white;
         }
 
+        #nav_div{
+            height: 100%;
+        }
         .col-lg-4 {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        height: 100%; /* Ensure each column takes full height of its parent */
+        height: 300px; /* Ensure each column takes full height of its parent */
+        
         }
 
         .top_navigation{
@@ -122,6 +126,7 @@
             z-index: 0;
             border-radius: 12px;
             background-color: black;
+            position: bottom;
         }
         .button_color{
             color: white;
@@ -280,7 +285,7 @@
 
             <!-- Three columns of text below the carousel -->
             <div class="top_navigation">
-                <div class="row">
+                <div id="nav_div" class="row">
                     <div class="col-lg-4">
                         <img class="rounded-circle mb-3" src="{% static 'classes_image_1.png' %}" style="width: 150px; height: 150px">
                         <h2 class="fw-normal">Classes at Morgan Valley Forge</h2>
@@ -297,7 +302,7 @@
                     </div><!-- /.col-lg-4 -->
                     <div class="col-lg-4">
                         <img class="rounded-circle mb-3" src="{% static 'profile_pic_1.png' %}" style="width: 150px; height: 150px">
-                        <h2 class="fw-normal">About Omimi and Morgan Vally Forge</h2> 
+                        <h2 class="fw-normal">About Howard Clark</h2> 
                         <button class="button">
                             <a class="button_color" href="{% url 'about' %}">About &raquo;</a>
                         </button>
