@@ -26,9 +26,9 @@ class Sword_imgAdmin(admin.ModelAdmin):
     def thumbnail(self, object):
         return format_html('<img src="{}" width="40" />'.format(object.image.url))
     
-    list_display = ['title', 'thumbnail']
-    search_fields = ['title']
-    list_filter = ['title']
+    list_display = ['item_number', 'thumbnail']
+    search_fields = ['item_number']
+    list_filter = ['item_number']
 
 
 @admin.register(Sword_sales)
