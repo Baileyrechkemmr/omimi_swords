@@ -116,7 +116,7 @@
         }
 
         .card_container {
-            
+            margin-left: 3%;
             display: flex;
             flex-direction: row;
             gap: 7px;
@@ -155,6 +155,7 @@
             padding-right: 1.5%;
             padding-left: 1.5%;
             padding-bottom: 1.5%;
+            margin-right: 3%;
         }
 
         body {
@@ -235,6 +236,14 @@
         /* end button */
         .coming-soon{
             display: none;
+        }
+        .pay_pal_info {
+            border-radius: 10px;
+            box-shadow: rgb(0, 0, 0) 5px 15px 5px;
+            background-color: rgba(128, 128, 128, 0.863);
+            width: 70%;
+            margin-left: 4%;
+            margin-bottom: 3%;
         }
     </style>
 
@@ -380,18 +389,27 @@
 
 
             <!-- START THE FEATURETTES -->
-            <div class="card_container">
-                {% for sword_sales in sword_sales.all %}
-                <div class="card" style="width: 18rem;">
-                    <img src="{{ sword_sales.image.url }}" class="card-img-top" alt="{{ sword_sales.image }}">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ sword_sales.title }}</h5>
-                        <button class="button">
-                            <a class="button_color" href="{% url 'details_sales' sword_sales.id %}" class="btn btn-primary">Learn more</a>
-                        </button>
+            <div class="row">
+                <div class="card_container">
+                    {% for sword_sales in sword_sales.all %}
+                    <div class="card" style="width: 18rem;">
+                        <img src="{{ sword_sales.image.url }}" class="card-img-top" alt="{{ sword_sales.image }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ sword_sales.title }}</h5>
+                            <button class="button">
+                                <a class="button_color" href="{% url 'details_sales' sword_sales.id %}" class="btn btn-primary">Learn more</a>
+                            </button>
+                        </div>
                     </div>
+                    {% endfor %}
                 </div>
-                {% endfor %}
+                <div class="pay_pal_info">
+                    <p>To secure your order, send a PayPal payment of to howard@mvforge.com and please include complete
+                        contact
+                        information, including a mailing address, shipping address (if different), email contact, and a telephone number. Or
+                        we
+                        can make arrangements to accept a credit card in other ways. Contact us at howard@mvforge.com for more options.</p>
+                </div>
             </div>
             <!-- /END THE FEATURETTES -->
             <div class="sales_form">
@@ -431,8 +449,6 @@
                     <button class="slaes_order_form_button" type="submit">submit</button>
 
                 </form>
-        
-
             </div>
 
         </div><!-- /.container -->
