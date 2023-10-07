@@ -24,7 +24,7 @@ class Classes(models.Model):
 # ask dad about price and if yes add price felid
 
 class Sword_img(models.Model):
-    title = models.CharField(max_length=250)
+    item_number = models.IntegerField(default=0)
     image = models.ImageField(upload_to='images/')
     description = models.TextField(default="null")
 
