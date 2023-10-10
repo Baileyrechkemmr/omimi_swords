@@ -33,7 +33,7 @@ environ.Env.read_env()
 SECRET_KEY = 'django-insecure-91!8xc543hj37*md&s1*wgfr+p)l+ow=n7bgu4ci5pi#)sz*qc'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST_USER = 'brechkemmer01@gmail.com'
@@ -146,11 +146,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),
-#'/var/www/static/',
-]
+# STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),
+# #'/var/www/static/',
+# ]
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 
 MEDIA_URL = '/media/'
