@@ -10,12 +10,20 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
-import dj_database_url
 from pathlib import Path
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+import environ
+
+env = environ.Env()
+
+environ.Env.read_env()
+
+
+
 
 
 # Quick-start development settings - unsuitable for production
@@ -84,15 +92,21 @@ WSGI_APPLICATION = 'omimi.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
+#  live render
+
+import dj_database_url 
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.parse()
+
 }
-
-DATABASES["default"] = dj_database_url.parse("postgres://omimi_swords_user:Bd96Q19AOnLKhKNqgwvdPFWc9Wyg70Wo@dpg-ckiplcgmccbs73bjf9ug-a/omimi_swords")
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
