@@ -146,7 +146,7 @@ def sales(request):
         Phone Number: {phone_number}
         """
         send_mail(
-            'knife sales order form',  # email titel
+            'Sales order form',  # email titel
             messages,  # messages
             'settings.EMAIL_HOST_USER',  # email for site
             ['bigearincornpatch@gmail.com'],  # email of recever
