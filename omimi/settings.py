@@ -104,7 +104,7 @@ WSGI_APPLICATION = 'omimi.wsgi.application'
 import dj_database_url 
 
 DATABASES = {
-    'default': dj_database_url.parse()
+    'default': dj_database_url.parse(env('DATABASE_URL'))
 
 }
 
