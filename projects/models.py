@@ -52,7 +52,7 @@ class Sword_sales(models.Model):
     price = models.CharField(max_length=50)
 
     def __str__(self):
-        return str(self.item_number)
+        return self.item_number
 
 # admin feild for blog posts
 
