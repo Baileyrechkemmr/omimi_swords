@@ -29,7 +29,7 @@ class Sword_img(models.Model):
     description = models.TextField(default="null")
 
     def __str__(self):
-        return self.item_number
+        return str(self.item_number)
 
 
 # at a later date have a felid possibly to use for the card for the travel and logins information 
@@ -52,7 +52,7 @@ class Sword_sales(models.Model):
     price = models.CharField(max_length=50)
 
     def __str__(self):
-        return self.item_number
+        return str(self.item_number)
 
 # admin feild for blog posts
 
