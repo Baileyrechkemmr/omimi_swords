@@ -17,6 +17,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='blog',
             name='date',
-            field=models.DateField(default='null'),
+            field=models.DateField(default='2023-10-10'),
         ),
     ]

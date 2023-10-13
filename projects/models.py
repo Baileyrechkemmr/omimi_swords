@@ -57,7 +57,7 @@ class Sword_sales(models.Model):
 # admin feild for blog posts
 
 class Blog(models.Model):
-    date = models.DateField(default="null")
+    date = models.DateField(auto_now_add=True)
     description = RichTextField(default="")
 
     @property
