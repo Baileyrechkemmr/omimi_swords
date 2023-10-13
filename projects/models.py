@@ -57,12 +57,13 @@ class Sword_sales(models.Model):
 # admin feild for blog posts
 
 class Blog(models.Model):
-    title = models.CharField(max_length=250)
+    date = models.DateField(default="null")
     description = RichTextField(default="")
 
     @property
     def stripped_rich_field(self):
         return strip_tags(self.description)
     
+    
     def __str__(self):
-        return self.title
+        return str(self.date)

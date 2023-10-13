@@ -50,6 +50,6 @@ class HotelAdmin(admin.ModelAdmin):
 
 @admin.register(Blog)
 class BlogAdmin(admin.ModelAdmin):
-    list_display = ['title']
-    search_fields = ['title']
-    list_filter = ['title']
+    list_display = ['date']
+    search_fields = ['date']
+    list_filter = ['date']
