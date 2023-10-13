@@ -249,7 +249,7 @@
 
 
     <!-- Custom styles for this template -->
-    <link href="carousel.css" rel="stylesheet">
+    
 </head>
 
 <body>
@@ -396,7 +396,7 @@
                         <img src="{{ sword_sales.image.url }}" class="card-img-top" alt="{{ sword_sales.image }}">
                         <div class="card-body">
                             <h5 class="card-title">{{ sword_sales.item_number }}</h5>
-                            <P class="card-price">$ {{ sword_sales.price }}</P>
+                            <P class="card-price">${{ sword_sales.price }}</P>
                             <button class="button">
                                 <a class="button_color" href="{% url 'details_sales' sword_sales.id %}" class="btn btn-primary">Learn more</a>
                             </button>
