@@ -18,13 +18,38 @@
 
 - postgresql
 
-- 
 
 ## Pip list
 
 - django
 
 - Install project with
+
+- asgiref
+
+- dj-database-url
+
+- Django
+
+- django-ckeditor
+
+- django-environ
+
+- django-js-asset
+
+- django-phonenumber-field
+
+- gunicorn
+
+- packaging
+
+- Pillow
+
+- psycopg2-binary
+
+- sqlparse
+
+- typing_extensions
 
   ```bash
     pip3 -r requirements.txt
