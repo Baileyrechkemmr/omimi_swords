@@ -103,7 +103,7 @@ WSGI_APPLICATION = 'omimi.wsgi.application'
 
 #  live render
 
-import dj_database_url 
+# import dj_database_url 
 
 DATABASES = {
     'default': dj_database_url.parse(env('DATABASE_URL'))
