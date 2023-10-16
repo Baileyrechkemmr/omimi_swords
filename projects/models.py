@@ -56,9 +56,14 @@ class Sword_sales(models.Model):
 
 # admin feild for blog posts
 
+
+class BlogImages(models.Model):
+    image = models.ImageField(upload_to='blog_images/')
+
 class Blog(models.Model):
     date = models.DateField(auto_now_add=True)
     description = RichTextField(default="")
+    images = models.ManyToManyField(BlogImages, blank=True)
 
     @property
     def stripped_rich_field(self):

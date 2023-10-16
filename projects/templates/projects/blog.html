@@ -353,6 +353,12 @@
                 <!-- Three columns of text below the carousel -->
                 <!-- idea for the blog but old school blog post vibe with just bright enough colors to make it pop and still easy to read. -->
                     <div class="container_blog">
+                        {% for image in blog.images.all %}
+                        <div class="blog_pictures">
+                            <img src="{{ image.image.url }}" alt="Blog Image">
+                        </div>
+                        {% endfor %}
+
                         {% for blog in blog.all %}
                         <div class="blog_posts">
                             <P class="posts">{{ blog.description | safe }}</P>
