@@ -6,7 +6,7 @@ from django.template.loader import render_to_string
 from django.core.mail import send_mail
 from django.conf import settings
 
-from .models import Year, Classes, Sword_img, Hotel, Blog, Sword_sales
+from .models import Year, Classes, Sword_img, Hotel, Blog, Sword_sales, BlogImages
 # Create your views here.
 
 
@@ -61,8 +61,8 @@ def movie(request):
 
 
 def blog(request):
-    blog = Blog.objects
-    return render(request, 'projects/blog.html', {'blog': blog})
+    blogs = Blog.objects.all()
+    return render(request, 'projects/blog.html', {'blogs': blogs})
 
 
 def gallery(request):

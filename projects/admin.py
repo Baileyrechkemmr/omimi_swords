@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Year, Classes, Sword_img, Hotel, Blog, Sword_sales
+from .models import Year, Classes, Sword_img, Hotel, Blog, Sword_sales, BlogImages
 from django.utils.html import format_html
 # Register your models here.
 # for admin page
@@ -47,9 +47,18 @@ class HotelAdmin(admin.ModelAdmin):
     list_filter = ['hotel_name']
 
 
+class BlogImagesInline(admin.TabularInline):
+    model = Blog.images.through
+
+
+@admin.register(BlogImages)
+class BlogImagesAdmin(admin.ModelAdmin):
+    list_display = ['image']
+
 
 @admin.register(Blog)
 class BlogAdmin(admin.ModelAdmin):
     list_display = ['date']
     search_fields = ['date']
     list_filter = ['date']
+    inlines = [BlogImagesInline]
