@@ -109,7 +109,7 @@
 <ul>
 <li>make the video able to play and take up full screen on the page {}</li>
 <li></li>
-<li></li>
+<li></li> 
 <li></li>
 <li></li>
 </ul>
