@@ -84,7 +84,7 @@ TEMPLATES = [
             ],
         },
     },
-]
+] 
 
 WSGI_APPLICATION = 'omimi.wsgi.application'
 
