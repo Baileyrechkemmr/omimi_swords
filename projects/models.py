@@ -25,7 +25,7 @@ class Classes(models.Model):
 
 class Sword_img(models.Model):
     item_number = models.IntegerField(default=0)
-    image = models.ImageField(upload_to='images/')
+    image = models.ImageField(upload_to='media/')
     description = models.TextField(default="null")
 
     def __str__(self):
@@ -47,7 +47,7 @@ class Hotel(models.Model):
 
 class Sword_sales(models.Model):
     item_number = models.IntegerField(default=0)
-    image = models.ImageField(upload_to='images/')
+    image = models.ImageField(upload_to='media/')
     description = models.TextField(default="null")
     price = models.CharField(max_length=50)
 
@@ -58,7 +58,7 @@ class Sword_sales(models.Model):
 
 
 class BlogImages(models.Model):
-    image = models.ImageField(upload_to='images/')
+    image = models.ImageField(upload_to='media/')
 
 class Blog(models.Model):
     date = models.DateField(auto_now_add=True)
