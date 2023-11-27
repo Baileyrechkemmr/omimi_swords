@@ -365,8 +365,8 @@
                     <div class="container_blog">
                         {% for blog in blogs %}
                             <div class="blog_post">
-                            {% for image in blog.images.all %}
-                                <img src="{{ image.image.url }}" alt="Blog Image" style="width: 150px;">
+                            {% for images in blog.images.all %}
+                                <img src="{{ images.image }}" alt="Blog Image" style="width: 150px;">
                             {% endfor %}
                             
                                 <p class="posts">{{ blog.description | safe }}</p>

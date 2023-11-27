@@ -36,13 +36,10 @@ urlpatterns = [
     path('details_h/<int:hotel_id>', projects.views.details_h, name='details_h'),
     path('sales/', projects.views.sales, name='sales'),
     path('details_sales/<int:sword_sales_id>',projects.views.details_sales, name='details_sales'),
+    re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
 ]
 
-urlpatterns += [
-    re_path(r'^media/(?P<path>.*)$', serve, {
-        'document_root': settings.MEDIA_ROOT,
-    }),
-]
+
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 # if settings.DEBUG:

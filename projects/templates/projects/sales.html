@@ -393,7 +393,7 @@
                 <div class="card_container">
                     {% for sword_sales in sword_sales.all %}
                     <div class="card" style="width: 18rem;">
-                        <img src="{{ sword_sales.image.url }}" class="card-img-top" alt="{{ sword_sales.image }}">
+                        <img src="{{ sword_sales.image }}" class="card-img-top" alt="{{ sword_sales.image }}">
                         <div class="card-body">
                             <h5 class="card-title">{{ sword_sales.item_number }}</h5>
                             <P class="card-price">${{ sword_sales.price }}</P>
