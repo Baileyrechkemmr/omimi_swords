@@ -58,7 +58,7 @@ class Sword_sales(models.Model):
 
 
 class BlogImages(models.Model):
-    image = models.ImageField(upload_to='blog_images/')
+    image = models.ImageField(upload_to='images/')
 
 class Blog(models.Model):
     date = models.DateField(auto_now_add=True)
